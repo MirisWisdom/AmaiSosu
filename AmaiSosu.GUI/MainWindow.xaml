@@ -10,6 +10,9 @@
         Height="450"
         WindowStartupLocation="CenterScreen"
         ResizeMode="CanMinimize">
+    <Window.DataContext>
+        <local:Main/>
+    </Window.DataContext>
     <StackPanel HorizontalAlignment="Center"
                 VerticalAlignment="Center">
         <!-- Header -->
@@ -31,6 +34,8 @@
         </DockPanel>
         <Button Margin="0,1,0,0"
                 Content="Install OpenSauce"
-                Height="25"/>
+                Height="25"
+                IsEnabled="{Binding CanInstall}"
+                Click="Install"/>
     </StackPanel>
 </Window>
