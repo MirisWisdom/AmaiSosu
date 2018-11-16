@@ -32,7 +32,7 @@ namespace Atarashii.CLI.Commands
                     Parse(args);
                     break;
                 default:
-                    Fail("Invoked an invalid Profile command.", 2);
+                    Fail("Invoked an invalid Profile command.", ExitType.IncorrectArguments);
                     break;
             }
         }
@@ -48,11 +48,11 @@ namespace Atarashii.CLI.Commands
             }
             catch (FileNotFoundException e)
             {
-                Fail(e.Message, 3);
+                Fail(e.Message, ExitType.Exception);
             }
             catch (ProfileException e)
             {
-                Fail(e.Message, 3);
+                Fail(e.Message, ExitType.Exception);
             }
         }
 
@@ -67,7 +67,7 @@ namespace Atarashii.CLI.Commands
             }
             catch (ProfileException e)
             {
-                Fail(e.Message, 3);
+                Fail(e.Message, ExitType.Exception);
             }
         }
 
@@ -117,7 +117,7 @@ namespace Atarashii.CLI.Commands
             }
             catch (Exception e)
             {
-                Fail(e.Message, 3);
+                Fail(e.Message, ExitType.Exception);
             }
         }
     }

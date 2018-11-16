@@ -12,7 +12,7 @@ namespace Atarashii.Modules.Profile.Options
         {
             VsyncOff,
             VsyncOn,
-            Fps30,
+            Fps30
         }
 
         /// <summary>

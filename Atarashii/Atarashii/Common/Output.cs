@@ -29,7 +29,7 @@ namespace Atarashii.Common
             ///     Represents an error message.
             /// </summary>
             Error,
-            
+
             /// <summary>
             ///     Represents a data dump.
             /// </summary>

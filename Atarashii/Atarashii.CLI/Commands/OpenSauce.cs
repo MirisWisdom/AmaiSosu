@@ -26,7 +26,7 @@ namespace Atarashii.CLI.Commands
                     Dump(args);
                     break;
                 default:
-                    Fail("Invoked an invalid OpenSauce command.", 2);
+                    Fail("Invoked an invalid OpenSauce command.", ExitType.IncorrectArguments);
                     break;
             }
         }
@@ -40,13 +40,13 @@ namespace Atarashii.CLI.Commands
             {
                 new InstallerFactory(args[0], Output).Get().Install();
             }
-            catch (OpenSauceException)
+            catch (OpenSauceException e)
             {
-                Environment.Exit(1);
+                Fail(e.Message, ExitType.Exception);
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                Environment.Exit(2);
+                Fail(e.Message, ExitType.Exception);
             }
         }
 
@@ -61,17 +61,15 @@ namespace Atarashii.CLI.Commands
                 using (var reader = new StringReader(File.ReadAllText(args[0])))
                 {
                     string line;
-                    while ((line = reader.ReadLine()) != null)
-                    {
-                        Dump(line);
-                    }
+                    while ((line = reader.ReadLine()) != null) Dump(line);
                 }
+
                 Console.WriteLine();
                 Pass("Successfully dumped data from the provided OpenSauce XML file.");
             }
             catch (Exception e)
             {
-                Fail(e.Message, 3);
+                Fail(e.Message, ExitType.Exception);
             }
         }
     }

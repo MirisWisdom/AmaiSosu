@@ -52,13 +52,11 @@ namespace Atarashii.CLI.Commands
         /// <param name="message">
         ///     Message to output.
         /// </param>
-        /// <param name="code">
-        ///     Error code to use for exiting.
-        /// </param>
-        protected void Fail(string message, int code)
+        /// <param name="exitType"></param>
+        protected void Fail(string message, ExitType exitType)
         {
             Output?.WriteError(Assembly.ProductName, message);
-            Environment.Exit(code);
+            Environment.Exit((int) exitType);
         }
 
         /// <summary>
@@ -80,7 +78,7 @@ namespace Atarashii.CLI.Commands
         /// </param>
         public void ExitIfNone(string[] args)
         {
-            if (args.Length == 0) Fail("Not enough or commands arguments provided.", 1);
+            if (args.Length == 0) Fail("Not enough or commands arguments provided.", ExitType.NotEnoughArguments);
         }
 
         /// <summary>

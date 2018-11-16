@@ -29,7 +29,7 @@ namespace Atarashii.CLI.Commands
                     Detect();
                     break;
                 default:
-                    Fail("Invoked an invalid Load command.", 1);
+                    Fail("Invoked an invalid Load command.", ExitType.IncorrectArguments);
                     break;
             }
         }
@@ -44,16 +44,14 @@ namespace Atarashii.CLI.Commands
                 var executable = new Executable(args[0], Output);
                 executable.Load();
             }
-            catch (LoaderException)
+            catch (LoaderException e)
             {
-                Environment.Exit(1);
+                Fail(e.Message, ExitType.Exception);
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                Environment.Exit(2);
+                Fail(e.Message, ExitType.Exception);
             }
-
-            Environment.Exit(0);
         }
 
         private void Detect()
@@ -64,11 +62,10 @@ namespace Atarashii.CLI.Commands
             try
             {
                 Console.WriteLine(ExecutableFactory.Get(ExecutableFactory.Type.Detect, Output).Path);
-                Environment.Exit(0);
             }
-            catch (FileNotFoundException)
+            catch (FileNotFoundException e)
             {
-                Environment.Exit(1);
+                Fail(e.Message, ExitType.Exception);
             }
         }
     }
