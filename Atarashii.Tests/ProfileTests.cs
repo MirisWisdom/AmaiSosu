@@ -49,39 +49,6 @@ namespace Atarashii.Tests
         }
 
         [Test]
-        public void ProfileParsing_NameIsCorrect_True()
-        {
-            Assert.That(_configuration.Name.Value, Is.EqualTo("New001"));
-        }
-
-        [Test]
-        public void ProfileParsing_ColourIsCorrect_True()
-        {
-            Assert.That(_configuration.Colour.Value, Is.EqualTo(Colour.Type.White));
-        }
-
-        [Test]
-        public void ProfileParsing_MouseSensitivityIsCorrect_True()
-        {
-            Assert.That(_configuration.Mouse.Sensitivity.Horizontal, Is.EqualTo(3));
-            Assert.That(_configuration.Mouse.Sensitivity.Vertical, Is.EqualTo(3));
-        }
-
-        [Test]
-        public void ProfileParsing_MouseAxisInversionIsCorrect_True()
-        {
-            Assert.That(_configuration.Mouse.InvertVerticalAxis, Is.EqualTo(false));
-        }
-
-        [Test]
-        public void ProfileParsing_AudioVolumeIsCorrect_True()
-        {
-            Assert.That(_configuration.Audio.Volume.Master, Is.EqualTo(10));
-            Assert.That(_configuration.Audio.Volume.Effects, Is.EqualTo(10));
-            Assert.That(_configuration.Audio.Volume.Music, Is.EqualTo(6));
-        }
-
-        [Test]
         public void ProfileParsing_AudioQualityCorrect_True()
         {
             Assert.That(_configuration.Audio.Quality.Value, Is.EqualTo(Quality.Type.Medium));
@@ -94,16 +61,49 @@ namespace Atarashii.Tests
         }
 
         [Test]
-        public void ProfileParsing_VideoResolutionIsCorrect_True()
+        public void ProfileParsing_AudioVolumeIsCorrect_True()
         {
-            Assert.That(_configuration.Video.Resolution.Width, Is.EqualTo(800));
-            Assert.That(_configuration.Video.Resolution.Height, Is.EqualTo(600));
+            Assert.That(_configuration.Audio.Volume.Master, Is.EqualTo(10));
+            Assert.That(_configuration.Audio.Volume.Effects, Is.EqualTo(10));
+            Assert.That(_configuration.Audio.Volume.Music, Is.EqualTo(6));
         }
 
         [Test]
-        public void ProfileParsing_VideoFrameRateIsCorrect_True()
+        public void ProfileParsing_ColourIsCorrect_True()
         {
-            Assert.That(_configuration.Video.FrameRate.Value, Is.EqualTo(FrameRate.Type.Fps30));
+            Assert.That(_configuration.Colour.Value, Is.EqualTo(Colour.Type.White));
+        }
+
+        [Test]
+        public void ProfileParsing_MouseAxisInversionIsCorrect_True()
+        {
+            Assert.That(_configuration.Mouse.InvertVerticalAxis, Is.EqualTo(false));
+        }
+
+        [Test]
+        public void ProfileParsing_MouseSensitivityIsCorrect_True()
+        {
+            Assert.That(_configuration.Mouse.Sensitivity.Horizontal, Is.EqualTo(3));
+            Assert.That(_configuration.Mouse.Sensitivity.Vertical, Is.EqualTo(3));
+        }
+
+        [Test]
+        public void ProfileParsing_NameIsCorrect_True()
+        {
+            Assert.That(_configuration.Name.Value, Is.EqualTo("New001"));
+        }
+
+        [Test]
+        public void ProfileParsing_NetworkPortsAreCorrect_True()
+        {
+            Assert.That(_configuration.Network.Port.Server, Is.EqualTo(2302));
+            Assert.That(_configuration.Network.Port.Client, Is.EqualTo(2303));
+        }
+
+        [Test]
+        public void ProfileParsing_NetworkTypeIsCorrect_True()
+        {
+            Assert.That(_configuration.Network.Connection.Value, Is.EqualTo(Connection.Type.DslLow));
         }
 
         [Test]
@@ -112,6 +112,12 @@ namespace Atarashii.Tests
             Assert.That(_configuration.Video.Effects.Specular, Is.EqualTo(true));
             Assert.That(_configuration.Video.Effects.Shadows, Is.EqualTo(true));
             Assert.That(_configuration.Video.Effects.Decals, Is.EqualTo(true));
+        }
+
+        [Test]
+        public void ProfileParsing_VideoFrameRateIsCorrect_True()
+        {
+            Assert.That(_configuration.Video.FrameRate.Value, Is.EqualTo(FrameRate.Type.Fps30));
         }
 
         [Test]
@@ -127,16 +133,10 @@ namespace Atarashii.Tests
         }
 
         [Test]
-        public void ProfileParsing_NetworkTypeIsCorrect_True()
+        public void ProfileParsing_VideoResolutionIsCorrect_True()
         {
-            Assert.That(_configuration.Network.Connection.Value, Is.EqualTo(Connection.Type.DslLow));
-        }
-
-        [Test]
-        public void ProfileParsing_NetworkPortsAreCorrect_True()
-        {
-            Assert.That(_configuration.Network.Port.Server, Is.EqualTo(2302));
-            Assert.That(_configuration.Network.Port.Client, Is.EqualTo(2303));
+            Assert.That(_configuration.Video.Resolution.Width, Is.EqualTo(800));
+            Assert.That(_configuration.Video.Resolution.Height, Is.EqualTo(600));
         }
     }
 }

@@ -20,16 +20,28 @@ namespace Atarashii.CLI
             try
             {
                 CommandFactory.Get(commands[0], output).Initialise(Command.GetArguments(commands));
+                Exit(ExitType.Success);
             }
             catch (IndexOutOfRangeException)
             {
-                Environment.Exit(1);
+                Exit(ExitType.Exception);
             }
             catch (CommandFactoryException e)
             {
                 output.Write(Output.Type.Error, Assembly.ProductName, e.Message);
-                Environment.Exit(2);
+                Exit(ExitType.Exception);
             }
+        }
+
+        /// <summary>
+        ///     Wrapper for the Environment Exit method.
+        /// </summary>
+        /// <param name="exitType">
+        ///     Exit type, which will be passed to the Environment Exit method as an integer.
+        /// </param>
+        private static void Exit(ExitType exitType)
+        {
+            Environment.Exit((int) exitType);
         }
     }
 }

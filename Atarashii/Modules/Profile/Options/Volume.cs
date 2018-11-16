@@ -8,16 +8,16 @@ namespace Atarashii.Modules.Profile.Options
     public class Volume
     {
         /// <summary>
-        ///     Master volume value.
-        ///     This value is expected to be between 0 and 10.
-        /// </summary>
-        private ushort _master = 10;
-
-        /// <summary>
         ///     Effects volume value.
         ///     This value is expected to be between 0 and 10.
         /// </summary>
         private ushort _effects = 10;
+
+        /// <summary>
+        ///     Master volume value.
+        ///     This value is expected to be between 0 and 10.
+        /// </summary>
+        private ushort _master = 10;
 
         /// <summary>
         ///     Music volume value.

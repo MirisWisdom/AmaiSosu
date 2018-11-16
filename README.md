@@ -18,9 +18,28 @@ command line interface (CLI). It is the result of learning from the mistakes of 
 By design, the library's APIs can be used outside of SPV3. The modules of this library are minimally tied to SPV3,
 thereby allowing both SPV3 and HCE projects to rely on the functionality provided by the library and the CLI front-end.
 
-# CLI Usage
+## CLI Usage
 
-Notes:
+The following table shows common tasks with their respective commands. 
+
+| Task                              | Command                                   |
+| --------------------------------- | ----------------------------------------- |
+| Attempt HCE executable loading.   | `Loader Load "\path\to\haloce.exe"`       |
+| Attempt HCE executable detection. | `Loader Detect`                           |
+| Attempt HCE profile detection.    | `Profile Resolve "\path\to\lastprof.txt"` |
+| Attempt HCE profile parsing.      | `Profile Parse "\path\to\blam.sav"`       |
+| Attempt OpenSauce installation.   | `OpenSauce Install "\path\to\hce-dir"`    |
+
+**Exit Codes**
+
+| Code | Description                                                        |
+| ---- | ------------------------------------------------------------------ |
+| `0`  | Invoked command has been executed successfully.                    |
+| `1`  | Not enough arguments have been provided for the specified command. |
+| `2`  | Incorrect arguments have been provided to the specified command.   |
+| `3`  | An exception has occurred when executing the invoked command.      |
+
+**Notes**
 
 - Due to its non-interactive nature, double clicking the executable will not execute anything meaningful!
   For example: `.\Atarashii.CLI.exe Loader Load "C:\haloce.exe"`.
@@ -28,15 +47,21 @@ Notes:
 - The syntax of the commands may change at any time for improved versatility & ease of use!
 - The commands are currently CaSe SeNSiTiVE!
 
-The following table shows common tasks with their respective commands. 
+# API Usage
 
-| Task                              | Command                                 |
-| --------------------------------- | --------------------------------------- |
-| Attempt HCE executable loading.   | Loader Load "\path\to\haloce.exe"       |
-| Attempt HCE executable detection. | Loader Detect                           |
-| Attempt HCE profile detection.    | Profile Resolve "\path\to\lastprof.txt" |
-| Attempt HCE profile parsing.      | Profile Parse "\path\to\blam.sav"       |
-| Attempt OpenSauce installation.   | OpenSauce Install "\path\to\hce-dir"    |
+An API assembly is provided for convenience, to allow external assemblies to make use of the library's functionality.
+
+The following table shows common tasks with the respective static methods that should be called. All methods are under
+the `Atarashii.API` namespace.
+
+| Task                              | Method                                          | Arguments                                                              | Return                                                                                                |
+| --------------------------------- | ----------------------------------------------- | ---------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| Attempt HCE executable loading.   | `void Loader.Load(string hceExecutable)`        | `hceExecutable`: Absolute path to a valid HCE executable.              | ~                                                                                                     |
+| Attempt HCE executable detection. | `string Loader.Detect()`                        | ~                                                                      | Path to the HCE executable, assuming its installation is legal.                                       |
+| Attempt HCE profile detection.    | `string Profile.Detect()`                       | ~                                                                      | Currently used HCE profile, assuming the environment is valid.                                        |
+| Attempt HCE profile parsing.      | `Profile.Configuration Parse(string blamPath)`  | `blamPath`: Path to a HCE profile blam.sav binary.                     | Deserialised `Profile.Configuration` object representing the provided blam.sav binary.                |
+| Attempt OpenSauce installation.   | `void Install(string hcePath)`                  | `hcePath`: Valid HCE installation directory.                           | ~                                                                                                     |
+| Attempt OpenSauce XML parsing.    | `OpenSauce.Configuration Parse(string xmlPath)` | `xmlPath`: Absolute path to the OpenSauce User configuration XML file. | Deserialised `OpenSauce.Configuration` object representing the OpenSauce User configuration XML file. |
 
 # About
 
