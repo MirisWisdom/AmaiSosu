@@ -37,7 +37,7 @@
         </DockPanel>
 
         <Button Margin="0,1,0,0"
-                Content="Install OpenSauce."
+                Content="Install OpenSauce"
                 Height="25"
                 IsEnabled="{Binding CanInstall}"
                 Click="Install" />
