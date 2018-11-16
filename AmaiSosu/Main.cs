@@ -1,10 +1,10 @@
 using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using AmaiSosu.GUI.Annotations;
+using AmaiSosu.Properties;
 using Atarashii.Modules.OpenSauce;
 
-namespace AmaiSosu.GUI
+namespace AmaiSosu
 {
     /// <summary>
     ///     Main AmaiSosu model.

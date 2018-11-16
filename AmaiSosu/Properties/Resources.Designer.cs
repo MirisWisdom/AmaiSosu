@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AmaiSosu.GUI.Properties
+namespace AmaiSosu.Properties
 {
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.

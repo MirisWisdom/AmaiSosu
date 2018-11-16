@@ -1,9 +1,9 @@
-<Window x:Class="AmaiSosu.GUI.MainWindow"
+<Window x:Class="AmaiSosu.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:local="clr-namespace:AmaiSosu.GUI"
+        xmlns:amaiSosu="clr-namespace:AmaiSosu"
         mc:Ignorable="d"
         Title="MainWindow"
         Width="960"
@@ -11,7 +11,7 @@
         WindowStartupLocation="CenterScreen"
         ResizeMode="CanMinimize">
     <Window.DataContext>
-        <local:Main />
+        <amaiSosu:Main />
     </Window.DataContext>
     <StackPanel HorizontalAlignment="Center"
                 VerticalAlignment="Center">

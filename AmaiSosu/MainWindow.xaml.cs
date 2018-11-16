@@ -1,6 +1,6 @@
 using System.Windows;
 
-namespace AmaiSosu.GUI
+namespace AmaiSosu
 {
     public partial class MainWindow : Window
     {
