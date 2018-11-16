@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9665535F-B184-41F6-AC56-85DB14FD3B79}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Atarashii</RootNamespace>
+    <AssemblyName>Atarashii</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+      <Reference Include="System.IO.Compression"/>
+      <Reference Include="System.IO.Compression.FileSystem"/>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+      <Compile Include="Common\Exceptions\PackageException.cs"/>
+      <Compile Include="Common\Exceptions\VerifierException.cs"/>
+      <Compile Include="Common\IVerifiable.cs"/>
+      <Compile Include="Common\Module.cs"/>
+      <Compile Include="Common\Output.cs"/>
+      <Compile Include="Common\Package.cs"/>
+      <Compile Include="Common\Verification.cs"/>
+      <Compile Include="Modules\Loader\Executable.cs"/>
+      <Compile Include="Modules\Loader\ExecutableFactory.cs"/>
+      <Compile Include="Modules\Loader\LoaderException.cs"/>
+      <Compile Include="Modules\OpenSauce\Configuration.cs"/>
+      <Compile Include="Modules\OpenSauce\ConfigurationFactory.cs"/>
+      <Compile Include="Modules\OpenSauce\Installer.cs"/>
+      <Compile Include="Modules\OpenSauce\InstallerFactory.cs"/>
+      <Compile Include="Modules\OpenSauce\OpenSauceException.cs"/>
+      <Compile Include="Modules\OpenSauce\Options\AntiAliasing.cs"/>
+      <Compile Include="Modules\OpenSauce\Options\Bloom.cs"/>
+      <Compile Include="Modules\OpenSauce\Options\CacheFiles.cs"/>
+      <Compile Include="Modules\OpenSauce\Options\Camera.cs"/>
+      <Compile Include="Modules\OpenSauce\Options\Effect.cs"/>
+      <Compile Include="Modules\OpenSauce\Options\ExternalEffects.cs"/>
+      <Compile Include="Modules\OpenSauce\Options\GameSpy.cs"/>
+      <Compile Include="Modules\OpenSauce\Options\Gbuffer.cs"/>
+      <Compile Include="Modules\OpenSauce\Options\Hud.cs"/>
+      <Compile Include="Modules\OpenSauce\Options\HudScale.cs"/>
+      <Compile Include="Modules\OpenSauce\Options\MapDownload.cs"/>
+      <Compile Include="Modules\OpenSauce\Options\MapEffects.cs"/>
+      <Compile Include="Modules\OpenSauce\Options\MotionBlur.cs"/>
+      <Compile Include="Modules\OpenSauce\Options\Networking.cs"/>
+      <Compile Include="Modules\OpenSauce\Options\Objects.cs"/>
+      <Compile Include="Modules\OpenSauce\Options\PostProcessing.cs"/>
+      <Compile Include="Modules\OpenSauce\Options\Rasterizer.cs"/>
+      <Compile Include="Modules\OpenSauce\Options\RasterizerShaderExtensions.cs"/>
+      <Compile Include="Modules\OpenSauce\Options\ShaderEnvironment.cs"/>
+      <Compile Include="Modules\OpenSauce\Options\ShaderExtensions.cs"/>
+      <Compile Include="Modules\OpenSauce\Options\ShaderObject.cs"/>
+      <Compile Include="Modules\OpenSauce\Options\ShaderRasterizer.cs"/>
+      <Compile Include="Modules\OpenSauce\Options\Upgrades.cs"/>
+      <Compile Include="Modules\Profile\Configuration.cs"/>
+      <Compile Include="Modules\Profile\ConfigurationFactory.cs"/>
+      <Compile Include="Modules\Profile\Lastprof.cs"/>
+      <Compile Include="Modules\Profile\LastprofFactory.cs"/>
+      <Compile Include="Modules\Profile\Options\Audio.cs"/>
+      <Compile Include="Modules\Profile\Options\Colour.cs"/>
+      <Compile Include="Modules\Profile\Options\Connection.cs"/>
+      <Compile Include="Modules\Profile\Options\Effects.cs"/>
+      <Compile Include="Modules\Profile\Options\FrameRate.cs"/>
+      <Compile Include="Modules\Profile\Options\Mouse.cs"/>
+      <Compile Include="Modules\Profile\Options\Name.cs"/>
+      <Compile Include="Modules\Profile\Options\Network.cs"/>
+      <Compile Include="Modules\Profile\Options\Particles.cs"/>
+      <Compile Include="Modules\Profile\Options\Port.cs"/>
+      <Compile Include="Modules\Profile\Options\Resolution.cs"/>
+      <Compile Include="Modules\Profile\Options\Quality.cs"/>
+      <Compile Include="Modules\Profile\Options\RefreshRate.cs"/>
+      <Compile Include="Modules\Profile\Options\Sensitivity.cs"/>
+      <Compile Include="Modules\Profile\Options\Video.cs"/>
+      <Compile Include="Modules\Profile\Options\Volume.cs"/>
+      <Compile Include="Modules\Profile\ProfileException.cs"/>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+                                         Other similar extension points exist, see Microsoft.Common.targets.
+                                    <Target Name="BeforeBuild">
+                                    </Target>
+                                    <Target Name="AfterBuild">
+                                    </Target>
+                                    -->
+</Project>
