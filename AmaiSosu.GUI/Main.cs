@@ -2,6 +2,7 @@ using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using AmaiSosu.GUI.Annotations;
+using Atarashii.Modules.OpenSauce;
 
 namespace AmaiSosu.GUI
 {
@@ -11,18 +12,23 @@ namespace AmaiSosu.GUI
     public class Main : INotifyPropertyChanged
     {
         /// <summary>
-        /// Installation path.
-        /// Path is expected to contain the HCE executable.
+        ///     Installation is possible given the current state.
+        /// </summary>
+        private bool _canInstall = true;
+
+        /// <summary>
+        ///     Current state of the OpenSauce installation.
+        /// </summary>
+        private string _installState = "Currently awaiting the end-user to invoke OpenSauce installation.";
+
+        /// <summary>
+        ///     Installation path.
+        ///     Path is expected to contain the HCE executable.
         /// </summary>
         private string _path;
-        
+
         /// <summary>
-        /// Installation is possible given the current state.
-        /// </summary>
-        private bool _canInstall;
-        
-        /// <summary>
-        /// Installation path.
+        ///     Installation path.
         /// </summary>
         public string Path
         {
@@ -36,7 +42,7 @@ namespace AmaiSosu.GUI
         }
 
         /// <summary>
-        /// Installation is possible given the current state.
+        ///     Installation is possible given the current state.
         /// </summary>
         public bool CanInstall
         {
@@ -50,14 +56,35 @@ namespace AmaiSosu.GUI
         }
 
         /// <summary>
-        /// Invokes the installation procedure.
+        ///     Current state of the OpenSauce installation.
+        /// </summary>
+        public string InstallText
+        {
+            get => _installState;
+            set
+            {
+                if (value == _installState) return;
+                _installState = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        ///     Invokes the installation procedure.
         /// </summary>
         public void Install()
         {
-            throw new NotImplementedException();
+            try
+            {
+                new InstallerFactory(Path).Get().Install();
+            }
+            catch (Exception e)
+            {
+                InstallText = e.Message;
+            }
         }
-        
-        public event PropertyChangedEventHandler PropertyChanged;
 
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)

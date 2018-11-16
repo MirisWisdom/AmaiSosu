@@ -5,7 +5,7 @@ namespace AmaiSosu.GUI
     public partial class MainWindow : Window
     {
         private readonly Main _main;
-        
+
         public MainWindow()
         {
             InitializeComponent();

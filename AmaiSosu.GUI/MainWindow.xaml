@@ -6,12 +6,12 @@
         xmlns:local="clr-namespace:AmaiSosu.GUI"
         mc:Ignorable="d"
         Title="MainWindow"
-        Width="800"
-        Height="450"
+        Width="960"
+        Height="480"
         WindowStartupLocation="CenterScreen"
         ResizeMode="CanMinimize">
     <Window.DataContext>
-        <local:Main/>
+        <local:Main />
     </Window.DataContext>
     <StackPanel HorizontalAlignment="Center"
                 VerticalAlignment="Center">
@@ -19,23 +19,31 @@
         <Label Content="HCE AmaiSosu"
                FontFamily="Segoe UI Light"
                FontSize="48"
-               HorizontalContentAlignment="Center"/>
+               HorizontalContentAlignment="Center" />
         <Label Content="⸻ An OpenSauce Installer ⸻"
-               HorizontalContentAlignment="Center"/>
-        
+               HorizontalContentAlignment="Center" />
+
         <!-- Installation -->
-        <DockPanel Margin="0,10,0,0">
+        <DockPanel Margin="0,10,0,0"
+                   Width="360">
             <Button DockPanel.Dock="Right"
                     Content="Browse"
                     Padding="5,0"
                     Height="25"
-                    Margin="1,0,0,0"/>
-            <TextBox/>
+                    Margin="1,0,0,0" />
+            <TextBox Text="{Binding Path}"
+                     VerticalContentAlignment="Center"
+                     Padding="2.5,0,0,0" />
         </DockPanel>
+
         <Button Margin="0,1,0,0"
-                Content="Install OpenSauce"
+                Content="Install OpenSauce."
                 Height="25"
                 IsEnabled="{Binding CanInstall}"
-                Click="Install"/>
+                Click="Install" />
+
+        <Label Margin="0,10,0,0"
+               HorizontalContentAlignment="Center"
+               Content="{Binding InstallText}" />
     </StackPanel>
 </Window>
