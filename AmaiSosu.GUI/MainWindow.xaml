@@ -5,8 +5,32 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:AmaiSosu.GUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow"
+        Width="800"
+        Height="450"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanMinimize">
+    <StackPanel HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+        <!-- Header -->
+        <Label Content="HCE AmaiSosu"
+               FontFamily="Segoe UI Light"
+               FontSize="48"
+               HorizontalContentAlignment="Center"/>
+        <Label Content="⸻ An OpenSauce Installer ⸻"
+               HorizontalContentAlignment="Center"/>
         
-    </Grid>
+        <!-- Installation -->
+        <DockPanel Margin="0,10,0,0">
+            <Button DockPanel.Dock="Right"
+                    Content="Browse"
+                    Padding="5,0"
+                    Height="25"
+                    Margin="1,0,0,0"/>
+            <TextBox/>
+        </DockPanel>
+        <Button Margin="0,1,0,0"
+                Content="Install OpenSauce"
+                Height="25"/>
+    </StackPanel>
 </Window>
