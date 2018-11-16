@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmaiSosu", "AmaiSosu\AmaiSo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmaiSosu.GUI", "AmaiSosu.GUI\AmaiSosu.GUI.csproj", "{4AB5A870-7A84-4206-994B-EAB91473CD6C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AmaiSosu", "AmaiSosu", "{A6B0E328-CA48-4934-845C-623B666F54F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atarashii", "Atarashii\Atarashii\Atarashii.csproj", "{9665535F-B184-41F6-AC56-85DB14FD3B79}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{4AB5A870-7A84-4206-994B-EAB91473CD6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4AB5A870-7A84-4206-994B-EAB91473CD6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4AB5A870-7A84-4206-994B-EAB91473CD6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9665535F-B184-41F6-AC56-85DB14FD3B79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9665535F-B184-41F6-AC56-85DB14FD3B79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9665535F-B184-41F6-AC56-85DB14FD3B79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9665535F-B184-41F6-AC56-85DB14FD3B79}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B9160F1B-8536-46B9-A2AB-AFB8B661A3BD} = {A6B0E328-CA48-4934-845C-623B666F54F0}
+		{4AB5A870-7A84-4206-994B-EAB91473CD6C} = {A6B0E328-CA48-4934-845C-623B666F54F0}
 	EndGlobalSection
 EndGlobal
