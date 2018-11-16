@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using AmaiSosu.Properties;
-using Atarashii.Modules.OpenSauce;
+using Atarashii.API;
 
 namespace AmaiSosu
 {
@@ -78,7 +78,7 @@ namespace AmaiSosu
         {
             try
             {
-                new InstallerFactory(Path).Get().Install();
+                OpenSauce.Install(Path);
             }
             catch (Exception e)
             {

@@ -1,7 +1,5 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atarashii", "Atarashii\Atarashii\Atarashii.csproj", "{9665535F-B184-41F6-AC56-85DB14FD3B79}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{B5A95A87-2022-4BB8-A41C-CEF80E31E172}"
 ProjectSection(SolutionItems) = preProject
 	README.md = README.md
@@ -9,21 +7,33 @@ EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmaiSosu", "AmaiSosu\AmaiSosu.csproj", "{4AB5A870-7A84-4206-994B-EAB91473CD6C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atarashii.API", "Atarashii\Atarashii.API\Atarashii.API.csproj", "{2C5D2B0E-FEA7-43F2-9960-215280CCA7B7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Atarashii", "Atarashii", "{E25ADF8A-11C3-435C-A767-E74F2335FEE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atarashii", "Atarashii\Atarashii\Atarashii.csproj", "{9665535F-B184-41F6-AC56-85DB14FD3B79}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9665535F-B184-41F6-AC56-85DB14FD3B79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9665535F-B184-41F6-AC56-85DB14FD3B79}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9665535F-B184-41F6-AC56-85DB14FD3B79}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9665535F-B184-41F6-AC56-85DB14FD3B79}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4AB5A870-7A84-4206-994B-EAB91473CD6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4AB5A870-7A84-4206-994B-EAB91473CD6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4AB5A870-7A84-4206-994B-EAB91473CD6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4AB5A870-7A84-4206-994B-EAB91473CD6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C5D2B0E-FEA7-43F2-9960-215280CCA7B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C5D2B0E-FEA7-43F2-9960-215280CCA7B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C5D2B0E-FEA7-43F2-9960-215280CCA7B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C5D2B0E-FEA7-43F2-9960-215280CCA7B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9665535F-B184-41F6-AC56-85DB14FD3B79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9665535F-B184-41F6-AC56-85DB14FD3B79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9665535F-B184-41F6-AC56-85DB14FD3B79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9665535F-B184-41F6-AC56-85DB14FD3B79}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{2C5D2B0E-FEA7-43F2-9960-215280CCA7B7} = {E25ADF8A-11C3-435C-A767-E74F2335FEE8}
+		{9665535F-B184-41F6-AC56-85DB14FD3B79} = {E25ADF8A-11C3-435C-A767-E74F2335FEE8}
 	EndGlobalSection
 EndGlobal
