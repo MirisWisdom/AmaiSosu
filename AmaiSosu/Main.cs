@@ -96,7 +96,9 @@ namespace AmaiSosu
         {
             try
             {
+                new Backup(Path).Commit();
                 OpenSauce.Install(Path);
+                InstallText = "Installation has been successful!";
             }
             catch (Exception e)
             {
