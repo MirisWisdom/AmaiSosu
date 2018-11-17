@@ -28,8 +28,9 @@ AmaiSosu is an installer for the HCE OpenSauce mod, which seeks to make the inst
 and easy. It serves as the successor of SweetSauce, in both its name and in its functionality.
 
 AmaiSosu installs the OpenSauce library data to the given HCE directory path, and it also installs in-game UI for
-configuring OpenSauce. If OpenSauce files are present in the given HCE directory path, it will back them up to
-a directory named `AmaiSosu.Backup.<GUID>`.
+configuring OpenSauce. If OpenSauce/HAC2 files are present in the given HCE directory path, it will back them up to
+a directory named `AmaiSosu.Backup.<GUID>`. HAC2 is incompatible with OS, thus it will be deactivated to ensure that
+there is no collision.
 
 ## Features
 
