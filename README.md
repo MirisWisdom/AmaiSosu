@@ -15,6 +15,10 @@
         <a href="https://github.com/yumiris/HCE.AmaiSosu/releases/latest">
             Download
         </a>
+        •
+        <a href="https://www.reddit.com/r/halospv3/comments/9xvnn5/amaisosu_an_opensauce_installer/">
+            Support
+        </a>
     </p>
 </html>
 
@@ -49,7 +53,8 @@ a directory named `AmaiSosu.Backup.<GUID>`.
 ## Support
 
 Given that the GitHub repository is a public mirror of the upstream code, issues are disabled there.
-To report bugs, please rely on the official Reddit thread.
+To report bugs, please rely on the
+[official Reddit thread](https://www.reddit.com/r/halospv3/comments/9xvnn5/amaisosu_an_opensauce_installer/).
 
 ## Attributions
 
