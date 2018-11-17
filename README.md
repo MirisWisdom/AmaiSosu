@@ -32,6 +32,7 @@ a directory named `AmaiSosu.Backup.<GUID>`.
 - installation of the OpenSauce libraries, in-game UI and user configurations;
 - installation of OpenSauce development tools (`OS_Guerilla`, `OS_Sapien`, `OS_Tool`, etc.);
 - automatic back-up of existing OpenSauce data in the HCE directory (both files and folders);
+- automatic back-up & deactivation of HAC2 if it exists, due to its incompatibility with OpenSauce;
 - automatic detection attempt of a legally installed HCE directory for an even easier installation;
 - ability to manually specify a HCE directory, for portable/non-standard HCE installations;
 - minimum administrative requirements -- they are only needed if HCE is installed a restricted location;

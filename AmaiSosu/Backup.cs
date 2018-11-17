@@ -6,7 +6,7 @@ using System.Linq;
 namespace AmaiSosu
 {
     /// <summary>
-    ///     Backs up any existing OpenSauce files in the installation directory by moving them to a dedicated
+    ///     Backs up any existing OpenSauce & HAC2 files in the installation directory by moving them to a dedicated
     ///     directory. The backup directory is located in the installation, and is named AmaiSosu.Backup.[GUID].
     ///     If the backup directory ends up being empty (therefore, a truly fresh OpenSauce installation), then it
     ///     will be deleted from the file system.
@@ -70,16 +70,37 @@ namespace AmaiSosu
         {
             var backupDir = Path.Combine(_path, "AmaiSosu.Backup." + Guid.NewGuid());
             Directory.CreateDirectory(backupDir);
+
             MoveFilesTo(backupDir);
             MoveDirectoriesTo(backupDir);
+            MoveHac2To(backupDir);
+
             if (!Directory.EnumerateFileSystemEntries(backupDir).Any()) Directory.Delete(backupDir);
+        }
+
+        /// <summary>
+        ///     Moves the HAC2 loader to the designated destination.
+        /// </summary>
+        /// <param name="backupDir">
+        ///     Target directory to move the files to.
+        /// </param>
+        private void MoveHac2To(string backupDir)
+        {
+            const string hac2Dll = "loader.dll";
+            const string hac2Dir = "controls";
+
+            var srcPath = Path.Combine(_path, hac2Dir, hac2Dll);
+            var dstPath = Path.Combine(backupDir, hac2Dll);
+
+            if (File.Exists(srcPath))
+                File.Move(srcPath, dstPath);
         }
 
         /// <summary>
         ///     Moves existing OpenSauce files to the designated destination.
         /// </summary>
         /// <param name="destination">
-        ///    Target directory to move the files to.
+        ///     Target directory to move the files to.
         /// </param>
         private void MoveFilesTo(string destination)
         {
@@ -97,7 +118,7 @@ namespace AmaiSosu
         ///     Moves existing OpenSauce directories to the designated destination.
         /// </summary>
         /// <param name="destination">
-        ///    Target directory to move the directories to.
+        ///     Target directory to move the directories to.
         /// </param>
         private void MoveDirectoriesTo(string destination)
         {

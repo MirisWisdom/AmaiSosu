@@ -54,11 +54,11 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="20" />
         </Grid.RowDefinitions>
-        
+
         <!-- Menu -->
         <Menu VerticalAlignment="Top">
-            <MenuItem Header="About" Click="About"/>
-            <MenuItem Header="Releases" Click="Releases"/>
+            <MenuItem Header="About" Click="About" />
+            <MenuItem Header="Releases" Click="Releases" />
         </Menu>
 
         <!-- Body -->
@@ -85,7 +85,7 @@
                        Padding="0"
                        HorizontalContentAlignment="Center" />
             </StackPanel>
-            
+
             <Label Content="⸻ An OpenSauce Installer ⸻"
                    HorizontalContentAlignment="Center" />
 
