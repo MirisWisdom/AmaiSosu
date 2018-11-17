@@ -60,6 +60,13 @@ namespace Atarashii.Modules.Loader
                         if (path != null) return new Executable($@"{path}\{Executable.Name}");
                     }
 
+                    using (var view = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry32))
+                    using (var key = view.OpenSubKey(RegKeyLocation))
+                    {
+                        var path = key?.GetValue(RegKeyIdentity);
+                        if (path != null) return new Executable($@"{path}\{Executable.Name}");
+                    }
+
                     var fullDefaultPath = $@"{DefaultInstall}\{Executable.Name}";
                     if (File.Exists(fullDefaultPath)) return new Executable(fullDefaultPath, output);
 
