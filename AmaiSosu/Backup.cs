@@ -21,7 +21,8 @@ namespace AmaiSosu
             "data",
             "MaxScripts",
             "shaders",
-            "tags"
+            "tags",
+            "OpenSauceIDE"
         };
 
         /// <summary>

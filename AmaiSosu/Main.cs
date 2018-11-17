@@ -98,12 +98,31 @@ namespace AmaiSosu
             {
                 new Backup(Path).Commit();
                 OpenSauce.Install(Path);
+                MoveOpenSauceIde();
                 InstallText = "Installation has been successful!";
             }
             catch (Exception e)
             {
                 InstallText = e.Message;
             }
+        }
+
+        /// <summary>
+        ///     Moves the OpenSauce IDE directory to the HCE directory for convenience.
+        ///     This method calls the static Copy.All(DirectoryInfo source, DirectoryInfo target) method.
+        /// </summary>
+        private void MoveOpenSauceIde()
+        {
+            const string dirName = "OpenSauceIDE";
+            
+            var source =
+                System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData),
+                    "Kornner Studios", "OpenSauce", dirName);
+
+            var target = System.IO.Path.Combine(Path, dirName);
+            
+            Copy.All(new DirectoryInfo(source), new DirectoryInfo(target));
+            Directory.Delete(source, true);
         }
 
         /// <summary>

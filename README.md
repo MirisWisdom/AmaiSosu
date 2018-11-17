@@ -36,6 +36,7 @@ there is no collision.
 
 - installation of the OpenSauce libraries, in-game UI and user configurations;
 - installation of OpenSauce development tools (`OS_Guerilla`, `OS_Sapien`, `OS_Tool`, etc.);
+- installation of the OpenSauce IDE to the HCE directory, for self-containerisation & convenience;
 - automatic back-up of existing OpenSauce data in the HCE directory (both files and folders);
 - automatic back-up & deactivation of HAC2 if it exists, due to its incompatibility with OpenSauce;
 - automatic detection attempt of a legally installed HCE directory for an even easier installation;
