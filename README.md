@@ -1,4 +1,7 @@
 <html>
+    <p align="center">
+        <img src="https://user-images.githubusercontent.com/10241434/48660304-ab069a80-ea9a-11e8-956a-4c817bef6d7d.png">
+    <p>
     <h1 align="center">
         HCE.AmaiSosu
     </h1>
@@ -18,7 +21,7 @@
 # Introduction
 
 AmaiSosu is an installer for the HCE OpenSauce mod, which seeks to make the installation much more straightforward
-and easy. It serves as the sucessor of SweetSauce, in both its name and in its functionality.
+and easy. It serves as the successor of SweetSauce, in both its name and in its functionality.
 
 AmaiSosu installs the OpenSauce library data to the given HCE directory path, and it also installs in-game UI for
 configuring OpenSauce. If OpenSauce files are present in the given HCE directory path, it will back them up to
@@ -42,7 +45,12 @@ a directory named `AmaiSosu.Backup.<GUID>`.
 3. However, if the path is not found, please click on browse and look for `haloce.exe` on your computer.
    Then, you can click Install and be done!
 
-# Support
+## Support
 
 Given that the GitHub repository is a public mirror of the upstream code, issues are disabled there.
 To report bugs, please rely on the official Reddit thread.
+
+## Attributions
+
+- [Icon](https://www.flaticon.com/free-icon/bowl-and-chopsticks-of-japan_12775)
+- [OpenSauce](https://twitter.com/KornnerStudios)
