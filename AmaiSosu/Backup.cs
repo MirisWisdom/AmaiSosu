@@ -90,11 +90,11 @@ namespace AmaiSosu
             const string hac2Dll = "loader.dll";
             const string hac2Dir = "controls";
 
-            var srcPath = Path.Combine(_path, hac2Dir, hac2Dll);
-            var dstPath = Path.Combine(backupDir, hac2Dll);
+            var source = Path.Combine(_path, hac2Dir, hac2Dll);
+            var target = Path.Combine(backupDir, hac2Dll);
 
-            if (File.Exists(srcPath))
-                File.Move(srcPath, dstPath);
+            if (File.Exists(source))
+                File.Move(source, target);
         }
 
         /// <summary>
@@ -107,11 +107,11 @@ namespace AmaiSosu
         {
             foreach (var dir in Directories)
             {
-                var srcPath = Path.Combine(_path, dir);
-                var dstPath = Path.Combine(destination, dir);
+                var source = Path.Combine(_path, dir);
+                var target = Path.Combine(destination, dir);
 
-                if (Directory.Exists(srcPath))
-                    Directory.Move(srcPath, dstPath);
+                if (Directory.Exists(source))
+                    Directory.Move(source, target);
             }
         }
 
@@ -125,11 +125,11 @@ namespace AmaiSosu
         {
             foreach (var file in Files)
             {
-                var srcPath = Path.Combine(_path, file);
-                var dstPath = Path.Combine(destination, file);
+                var source = Path.Combine(_path, file);
+                var target = Path.Combine(destination, file);
 
-                if (File.Exists(srcPath))
-                    File.Move(srcPath, dstPath);
+                if (File.Exists(source))
+                    File.Move(source, target);
             }
         }
     }
