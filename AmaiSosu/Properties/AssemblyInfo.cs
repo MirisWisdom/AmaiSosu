@@ -5,12 +5,12 @@ using System.Windows;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("AmaiSosu.GUI")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("AmaiSosu")]
+[assembly: AssemblyDescription("OpenSauce Installer")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("AmaiSosu.GUI")]
-[assembly: AssemblyCopyright("Copyright ©  2018")]
+[assembly: AssemblyCompany("github/yumiris")]
+[assembly: AssemblyProduct("HCE.AmaiSosu")]
+[assembly: AssemblyCopyright("Copyright © 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
