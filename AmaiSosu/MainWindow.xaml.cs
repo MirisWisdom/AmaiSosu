@@ -30,5 +30,15 @@ namespace AmaiSosu
             if (openFileDialog.ShowDialog() == true)
                 _main.Path = Path.GetDirectoryName(openFileDialog.FileName);
         }
+
+        private void About(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/yumiris/HCE.AmaiSosu");
+        }
+
+        private void Releases(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/yumiris/HCE.AmaiSosu/releases");
+        }
     }
 }

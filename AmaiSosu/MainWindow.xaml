@@ -54,9 +54,11 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="20" />
         </Grid.RowDefinitions>
+        
+        <!-- Menu -->
         <Menu VerticalAlignment="Top">
-            <MenuItem Header="About" />
-            <MenuItem Header="GitHub" />
+            <MenuItem Header="About" Click="About"/>
+            <MenuItem Header="Releases" Click="Releases"/>
         </Menu>
 
         <!-- Body -->
