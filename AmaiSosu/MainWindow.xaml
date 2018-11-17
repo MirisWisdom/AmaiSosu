@@ -6,7 +6,7 @@
         xmlns:amaiSosu="clr-namespace:AmaiSosu"
         mc:Ignorable="d"
         Title="HCE.AmaiSosu | OpenSauce Installer"
-        Width="960"
+        Width="900"
         Height="480"
         WindowStartupLocation="CenterScreen"
         ResizeMode="CanMinimize"

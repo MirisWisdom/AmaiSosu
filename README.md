@@ -6,7 +6,7 @@
         An Alternative OpenSauce Installer
     </h3>
     <p align="center">
-        <img src="./AmaiSosu.Screenshot.png">
+        <img src="https://user-images.githubusercontent.com/10241434/48660282-52cf9880-ea9a-11e8-9654-caf579a21500.png">
     <p>
     <p align="center">
         <a href="https://github.com/yumiris/HCE.AmaiSosu/releases/latest">
