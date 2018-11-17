@@ -83,9 +83,9 @@ namespace AmaiSosu
                 Path = System.IO.Path.GetDirectoryName(Loader.Detect());
                 OnPathChanged();
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                InstallText = e.Message;
+                InstallText = "Click Browse and select the HCE installation path.";
             }
         }
 
@@ -96,8 +96,8 @@ namespace AmaiSosu
         {
             try
             {
-//                new Backup(Path).Commit();
-//                OpenSauce.Install(Path);
+                new Backup(Path).Commit();
+                OpenSauce.Install(Path);
                 InstallText = "Installation has been successful!";
             }
             catch (Exception e)
@@ -112,7 +112,7 @@ namespace AmaiSosu
         private void OnPathChanged()
         {
             if (Directory.Exists(Path))
-                InstallText = "Ready to install OpenSauce. Click Install!";
+                InstallText = "Ready to install OpenSauce to the HCE folder!";
         }
 
         [NotifyPropertyChangedInvocator]
