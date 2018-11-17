@@ -10,6 +10,7 @@ namespace AmaiSosu
         {
             InitializeComponent();
             _main = (Main) DataContext;
+            _main.Initialise();
         }
 
         private void Install(object sender, RoutedEventArgs e)

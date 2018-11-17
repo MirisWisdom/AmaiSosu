@@ -72,6 +72,21 @@ namespace AmaiSosu
         public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
+        ///     Initialise the HCE path detection attempt.
+        /// </summary>
+        public void Initialise()
+        {
+            try
+            {
+                Path = System.IO.Path.GetDirectoryName(Loader.Detect());
+            }
+            catch (Exception e)
+            {
+                InstallText = e.Message;
+            }
+        }
+
+        /// <summary>
         ///     Invokes the installation procedure.
         /// </summary>
         public void Install()
