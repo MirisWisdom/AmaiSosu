@@ -1,4 +1,6 @@
+using System.IO;
 using System.Windows;
+using Microsoft.Win32;
 
 namespace AmaiSosu
 {
@@ -16,6 +18,17 @@ namespace AmaiSosu
         private void Install(object sender, RoutedEventArgs e)
         {
             _main.Install();
+        }
+
+        private void Browse(object sender, RoutedEventArgs e)
+        {
+            var openFileDialog = new OpenFileDialog
+            {
+                Filter = "HCE Executable|haloce.exe"
+            };
+            
+            if (openFileDialog.ShowDialog() == true)
+                _main.Path = Path.GetDirectoryName(openFileDialog.FileName);
         }
     }
 }

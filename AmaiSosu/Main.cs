@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel;
+using System.IO;
 using System.Runtime.CompilerServices;
 using AmaiSosu.Properties;
 using Atarashii.API;
@@ -38,6 +39,7 @@ namespace AmaiSosu
                 if (value == _path) return;
                 _path = value;
                 OnPropertyChanged();
+                OnPathChanged();
             }
         }
 
@@ -79,6 +81,7 @@ namespace AmaiSosu
             try
             {
                 Path = System.IO.Path.GetDirectoryName(Loader.Detect());
+                OnPathChanged();
             }
             catch (Exception e)
             {
@@ -99,6 +102,15 @@ namespace AmaiSosu
             {
                 InstallText = e.Message;
             }
+        }
+
+        /// <summary>
+        ///     Updates the install text upon successful path provision.
+        /// </summary>
+        private void OnPathChanged()
+        {
+            if (Directory.Exists(Path))
+                InstallText = "Ready to install OpenSauce. Click Install!";
         }
 
         [NotifyPropertyChangedInvocator]

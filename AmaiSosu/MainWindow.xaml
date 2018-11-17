@@ -47,7 +47,8 @@
                         Content="Browse"
                         Padding="5,0"
                         Height="25"
-                        Margin="1,0,0,0" />
+                        Margin="1,0,0,0"
+                        Click="Browse"/>
                 <TextBox Text="{Binding Path}"
                          VerticalContentAlignment="Center"
                          Padding="2.5,0,0,0" />
