@@ -62,3 +62,12 @@ To report bugs, please rely on the
 
 - [Icon](https://www.flaticon.com/free-icon/bowl-and-chopsticks-of-japan_12775)
 - [OpenSauce](https://twitter.com/KornnerStudios)
+
+# Development
+
+AmaiSosu uses the Atarashii Library's OpenSauce module for installing OS to the system. It also applies its own
+modifications and enhancements on top, such as backing up existing OpenSauce data, resolving HAC2 conflicts and
+installing the OS IDE to the HCE directory. A copy of the Atarashii source code is included in this repository.
+
+The GitHub repository for AmaiSosu serves a public read-only mirror of the private upstream repository. All commits are
+immediately mirrored to GitHub for transparency.
