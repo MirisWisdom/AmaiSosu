@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using AmaiSosu.Properties;
 using Atarashii.API;
@@ -96,15 +98,66 @@ namespace AmaiSosu
         {
             try
             {
-                new Backup(Path).Commit();
+                var backupDir = System.IO.Path.Combine(_path, "AmaiSosu.Backup." + Guid.NewGuid());
+                var backup = new Backup(Path, backupDir);
+
+                Directory.CreateDirectory(backupDir);
+
+                backup.MoveFiles();
+                backup.MoveDirectories();
+                backup.MoveHac2();
+
                 OpenSauce.Install(Path);
+
                 MoveOpenSauceIde();
+                RestoreShaders(backupDir);
+                CleanUpBackupDir(backupDir);
+
                 InstallText = "Installation has been successful!";
             }
             catch (Exception e)
             {
                 InstallText = e.Message;
             }
+        }
+
+        /// <summary>
+        ///     Restores the shader files from the backed up shaders directory.
+        /// </summary>
+        /// <param name="backupDir">
+        ///    Directory where the backed up shaders directory is present. 
+        /// </param>
+        private void RestoreShaders(string backupDir)
+        {
+            const string shadersDir = "shaders";
+
+            var shaders = new List<string>
+            {
+                "EffectCollection_ps_1_1.enc",
+                "EffectCollection_ps_1_4.enc",
+                "EffectCollection_ps_2_0.enc",
+                "vsh.enc"
+            };
+
+            foreach (var shader in shaders)
+            {
+                var source = System.IO.Path.Combine(backupDir, shadersDir, shader);
+                var target = System.IO.Path.Combine(Path, shadersDir, shader);
+
+                if (File.Exists(source))
+                    File.Move(source, target);
+            }
+        }
+
+        /// <summary>
+        ///     Removes any empty directories in the backup directory.
+        /// </summary>
+        /// <param name="backupDir">
+        ///    Backup directory to check for empty directories.
+        /// </param>
+        private void CleanUpBackupDir(string backupDir)
+        {
+            if (!Directory.EnumerateFileSystemEntries(backupDir).Any()) Directory.Delete(backupDir);
         }
 
         /// <summary>
