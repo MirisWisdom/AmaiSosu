@@ -4,9 +4,9 @@ using System.IO;
 namespace AmaiSosu.Routines
 {
     /// <inheritdoc />
-    public class BackupFile : Backup
+    public class MoveFile : Move
     {
-        public BackupFile(List<string> data, string sourceDirectory, string targetDirectory) : base(data,
+        public MoveFile(List<string> data, string sourceDirectory, string targetDirectory) : base(data,
             sourceDirectory, targetDirectory)
         {
             // call parent constructor

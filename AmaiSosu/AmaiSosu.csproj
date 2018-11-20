@@ -57,10 +57,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Routines\Backup.cs" />
-    <Compile Include="Routines\BackupDirectory.cs" />
-    <Compile Include="Routines\BackupFactory.cs" />
-    <Compile Include="Routines\BackupFile.cs" />
+    <Compile Include="Routines\Move.cs" />
+    <Compile Include="Routines\MoveDirectory.cs" />
+    <Compile Include="Routines\MoveFactory.cs" />
+    <Compile Include="Routines\MoveFile.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Copy.cs" />

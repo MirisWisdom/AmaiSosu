@@ -3,9 +3,9 @@ using System.Collections.Generic;
 namespace AmaiSosu.Routines
 {
     /// <summary>
-    ///     Abstract representing a type that conducts data backup by moving it pre-installation.
+    ///     Abstract representing a type that conducts data migration.
     /// </summary>
-    public abstract class Backup
+    public abstract class Move
     {
         /// <summary>
         ///     Backup constructor.
@@ -19,7 +19,7 @@ namespace AmaiSosu.Routines
         /// <param name="targetDirectory">
         ///     <see cref="TargetDirectory" />
         /// </param>
-        protected Backup(List<string> data, string sourceDirectory, string targetDirectory)
+        protected Move(List<string> data, string sourceDirectory, string targetDirectory)
         {
             Data = data;
             SourceDirectory = sourceDirectory;

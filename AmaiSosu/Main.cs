@@ -103,14 +103,17 @@ namespace AmaiSosu
 
                 Directory.CreateDirectory(backupDir);
 
-                BackupFactory.Get(BackupFactory.Type.OsFiles, _path, backupDir).Commit();
-                BackupFactory.Get(BackupFactory.Type.OsDirectories, _path, backupDir).Commit();
-                BackupFactory.Get(BackupFactory.Type.Hac2Files, _path, backupDir).Commit();
-
+                // back up existing OS data
+                MoveFactory.Get(MoveFactory.Type.BackupOsFiles, _path, backupDir).Commit();
+                MoveFactory.Get(MoveFactory.Type.BackupOsDirectories, _path, backupDir).Commit();
+                MoveFactory.Get(MoveFactory.Type.BackupHac2Files, _path, backupDir).Commit();
+                
                 OpenSauce.Install(Path);
 
+                // restore backed up HCE shaders
+                MoveFactory.Get(MoveFactory.Type.RestoreHceShaders, _path, backupDir).Commit();
                 MoveOpenSauceIde();
-                RestoreShaders(backupDir);
+
                 CleanUpBackupDir(backupDir);
 
                 InstallText = "Installation has been successful!";
@@ -118,34 +121,6 @@ namespace AmaiSosu
             catch (Exception e)
             {
                 InstallText = e.Message;
-            }
-        }
-
-        /// <summary>
-        ///     Restores the shader files from the backed up shaders directory.
-        /// </summary>
-        /// <param name="backupDir">
-        ///     Directory where the backed up shaders directory is present.
-        /// </param>
-        private void RestoreShaders(string backupDir)
-        {
-            const string shadersDir = "shaders";
-
-            var shaders = new List<string>
-            {
-                "EffectCollection_ps_1_1.enc",
-                "EffectCollection_ps_1_4.enc",
-                "EffectCollection_ps_2_0.enc",
-                "vsh.enc"
-            };
-
-            foreach (var shader in shaders)
-            {
-                var source = System.IO.Path.Combine(backupDir, shadersDir, shader);
-                var target = System.IO.Path.Combine(Path, shadersDir, shader);
-
-                if (File.Exists(source))
-                    File.Move(source, target);
             }
         }
 
