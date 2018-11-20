@@ -67,11 +67,11 @@ To report bugs, please rely on the
 
 ## Testers
 
-The following invaluable testers have confirmed the following significant issues:
+The following invaluable testers have reported/assisted with issues:
 
-| Issue                                 | Reporters                                                              |
-| ------------------------------------- | ---------------------------------------------------------------------- |
-| HCE breaks when shaders are backed up | `Anton#6293`, [Michelle](https://github.com/gbMichelle), Lionirdeadman |
+- Anton#6293
+- [Michelle](https://github.com/gbMichelle)
+- [Lionir](https://github.com/lionirdeadman)
 
 # Development
 
