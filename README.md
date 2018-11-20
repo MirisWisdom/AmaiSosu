@@ -63,6 +63,16 @@ To report bugs, please rely on the
 - [Icon](https://www.flaticon.com/free-icon/bowl-and-chopsticks-of-japan_12775)
 - [OpenSauce](https://twitter.com/KornnerStudios)
 
+# Contributors
+
+## Testers
+
+The following invaluable testers have confirmed the following significant issues:
+
+| Issue                                 | Reporters                                                              |
+| ------------------------------------- | ---------------------------------------------------------------------- |
+| HCE breaks when shaders are backed up | `Anton#6293`, [Michelle](https://github.com/gbMichelle), Lionirdeadman |
+
 # Development
 
 AmaiSosu uses the Atarashii Library's OpenSauce module for installing OS to the system. It also applies its own
