@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace AmaiSosu.Routines
+namespace AmaiSosu.IO
 {
     /// <summary>
     ///     Abstract representing a type that conducts data migration.

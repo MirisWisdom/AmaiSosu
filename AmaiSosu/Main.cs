@@ -4,8 +4,8 @@ using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using AmaiSosu.IO;
 using AmaiSosu.Properties;
-using AmaiSosu.Routines;
 using Atarashii.API;
 
 namespace AmaiSosu
@@ -101,20 +101,9 @@ namespace AmaiSosu
             {
                 var backupDir = System.IO.Path.Combine(_path, "AmaiSosu.Backup." + Guid.NewGuid());
 
-                Directory.CreateDirectory(backupDir);
-
-                // back up existing OS data
-                MoveFactory.Get(MoveFactory.Type.BackupOsFiles, _path, backupDir).Commit();
-                MoveFactory.Get(MoveFactory.Type.BackupOsDirectories, _path, backupDir).Commit();
-                MoveFactory.Get(MoveFactory.Type.BackupHac2Files, _path, backupDir).Commit();
-                
+                CommitBackups(backupDir);
                 OpenSauce.Install(Path);
-
-                // restore backed up HCE shaders
-                MoveFactory.Get(MoveFactory.Type.RestoreHceShaders, _path, backupDir).Commit();
-                MoveOpenSauceIde();
-
-                CleanUpBackupDir(backupDir);
+                FinishInstall(backupDir);
 
                 InstallText = "Installation has been successful!";
             }
@@ -125,22 +114,36 @@ namespace AmaiSosu
         }
 
         /// <summary>
-        ///     Removes any empty directories in the backup directory.
+        ///     Conducts the OpenSauce & HAC2 data backup routines.
         /// </summary>
         /// <param name="backupDir">
-        ///     Backup directory to check for empty directories.
+        ///     Backup directory to use for backing up OpenSauce & HAC2 data.
         /// </param>
-        private void CleanUpBackupDir(string backupDir)
+        private void CommitBackups(string backupDir)
         {
-            if (!Directory.EnumerateFileSystemEntries(backupDir).Any()) Directory.Delete(backupDir);
+            Directory.CreateDirectory(backupDir);
+
+            new List<Move>
+            {
+                MoveFactory.Get(MoveFactory.Type.BackupOsFiles, _path, backupDir),
+                MoveFactory.Get(MoveFactory.Type.BackupOsDirectories, _path, backupDir),
+                MoveFactory.Get(MoveFactory.Type.BackupHac2Files, _path, backupDir)
+            }.ForEach(move => move.Commit());
         }
 
         /// <summary>
-        ///     Moves the OpenSauce IDE directory to the HCE directory for convenience.
-        ///     This method calls the static Copy.All(DirectoryInfo source, DirectoryInfo target) method.
+        ///     Conducts optional installation finalisation routines.
+        ///     - Restore the HCE shaders.
+        ///     - Move the OpenSauce IDE.
+        ///     - Backup directory cleanup.
         /// </summary>
-        private void MoveOpenSauceIde()
+        /// <param name="backupDir"></param>
+        private void FinishInstall(string backupDir)
         {
+            // restore backed up HCE shaders
+            MoveFactory.Get(MoveFactory.Type.RestoreHceShaders, _path, backupDir).Commit();
+
+            // move the OpenSauce IDE data
             const string dirName = "OpenSauceIDE";
 
             var source =
@@ -151,6 +154,9 @@ namespace AmaiSosu
 
             Copy.All(new DirectoryInfo(source), new DirectoryInfo(target));
             Directory.Delete(source, true);
+
+            // cleans up backup directory
+            if (!Directory.EnumerateFileSystemEntries(backupDir).Any()) Directory.Delete(backupDir);
         }
 
         /// <summary>

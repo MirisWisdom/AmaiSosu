@@ -57,13 +57,13 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Routines\Move.cs" />
-    <Compile Include="Routines\MoveDirectory.cs" />
-    <Compile Include="Routines\MoveFactory.cs" />
-    <Compile Include="Routines\MoveFile.cs" />
+    <Compile Include="IO\Copy.cs" />
+    <Compile Include="IO\Move.cs" />
+    <Compile Include="IO\MoveDirectory.cs" />
+    <Compile Include="IO\MoveFactory.cs" />
+    <Compile Include="IO\MoveFile.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Copy.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
