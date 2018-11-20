@@ -1,7 +1,5 @@
-using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 
 namespace AmaiSosu
 {
@@ -59,77 +57,56 @@ namespace AmaiSosu
         /// </summary>
         private readonly string _path;
 
-        public Backup(string path)
+        private readonly string _backupDir;
+
+        public Backup(string path, string backupDir)
         {
             _path = path;
-        }
-
-        /// <summary>
-        ///     Public wrapper for the OpenSauce data backup methods.
-        /// </summary>
-        public void Commit()
-        {
-            var backupDir = Path.Combine(_path, "AmaiSosu.Backup." + Guid.NewGuid());
-            Directory.CreateDirectory(backupDir);
-
-            MoveFilesTo(backupDir);
-            MoveDirectoriesTo(backupDir);
-            MoveHac2To(backupDir);
-
-            if (!Directory.EnumerateFileSystemEntries(backupDir).Any()) Directory.Delete(backupDir);
+            _backupDir = backupDir;
         }
 
         /// <summary>
         ///     Moves the HAC2 loader to the designated destination.
         /// </summary>
-        /// <param name="backupDir">
-        ///     Target directory to move the files to.
-        /// </param>
-        private void MoveHac2To(string backupDir)
+        public void MoveHac2()
         {
             const string hac2Dll = "loader.dll";
             const string hac2Dir = "controls";
 
             var source = Path.Combine(_path, hac2Dir, hac2Dll);
-            var target = Path.Combine(backupDir, hac2Dll);
+            var target = Path.Combine(_backupDir, hac2Dll);
 
             if (File.Exists(source))
                 File.Move(source, target);
         }
 
         /// <summary>
-        ///     Moves existing OpenSauce files to the designated destination.
+        ///     Moves existing OpenSauce files to the specified backup directory.
         /// </summary>
-        /// <param name="destination">
-        ///     Target directory to move the files to.
-        /// </param>
-        private void MoveFilesTo(string destination)
-        {
-            foreach (var dir in Directories)
-            {
-                var source = Path.Combine(_path, dir);
-                var target = Path.Combine(destination, dir);
-
-                if (Directory.Exists(source))
-                    Directory.Move(source, target);
-            }
-        }
-
-        /// <summary>
-        ///     Moves existing OpenSauce directories to the designated destination.
-        /// </summary>
-        /// <param name="destination">
-        ///     Target directory to move the directories to.
-        /// </param>
-        private void MoveDirectoriesTo(string destination)
+        public void MoveFiles()
         {
             foreach (var file in Files)
             {
                 var source = Path.Combine(_path, file);
-                var target = Path.Combine(destination, file);
+                var target = Path.Combine(_backupDir, file);
 
                 if (File.Exists(source))
                     File.Move(source, target);
+            }
+        }
+
+        /// <summary>
+        ///     Moves existing OpenSauce directories to the specified backup directory.
+        /// </summary>
+        public void MoveDirectories()
+        {
+            foreach (var dir in Directories)
+            {
+                var source = Path.Combine(_path, dir);
+                var target = Path.Combine(_backupDir, dir);
+
+                if (Directory.Exists(source))
+                    Directory.Move(source, target);
             }
         }
     }
