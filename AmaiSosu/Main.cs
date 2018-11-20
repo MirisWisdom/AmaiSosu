@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using AmaiSosu.Properties;
+using AmaiSosu.Routines;
 using Atarashii.API;
 
 namespace AmaiSosu
@@ -99,13 +100,12 @@ namespace AmaiSosu
             try
             {
                 var backupDir = System.IO.Path.Combine(_path, "AmaiSosu.Backup." + Guid.NewGuid());
-                var backup = new Backup(Path, backupDir);
 
                 Directory.CreateDirectory(backupDir);
 
-                backup.MoveFiles();
-                backup.MoveDirectories();
-                backup.MoveHac2();
+                BackupFactory.Get(BackupFactory.Type.OsFiles, _path, backupDir).Commit();
+                BackupFactory.Get(BackupFactory.Type.OsDirectories, _path, backupDir).Commit();
+                BackupFactory.Get(BackupFactory.Type.Hac2Files, _path, backupDir).Commit();
 
                 OpenSauce.Install(Path);
 
@@ -125,7 +125,7 @@ namespace AmaiSosu
         ///     Restores the shader files from the backed up shaders directory.
         /// </summary>
         /// <param name="backupDir">
-        ///    Directory where the backed up shaders directory is present. 
+        ///     Directory where the backed up shaders directory is present.
         /// </param>
         private void RestoreShaders(string backupDir)
         {
@@ -153,7 +153,7 @@ namespace AmaiSosu
         ///     Removes any empty directories in the backup directory.
         /// </summary>
         /// <param name="backupDir">
-        ///    Backup directory to check for empty directories.
+        ///     Backup directory to check for empty directories.
         /// </param>
         private void CleanUpBackupDir(string backupDir)
         {

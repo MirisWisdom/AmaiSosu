@@ -57,9 +57,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Routines\Backup.cs" />
+    <Compile Include="Routines\BackupDirectory.cs" />
+    <Compile Include="Routines\BackupFactory.cs" />
+    <Compile Include="Routines\BackupFile.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Backup.cs" />
     <Compile Include="Copy.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="MainWindow.xaml.cs">
