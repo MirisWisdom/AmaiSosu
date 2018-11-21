@@ -9,7 +9,7 @@
         An Alternative OpenSauce Installer
     </h3>
     <p align="center">
-        <img src="https://user-images.githubusercontent.com/10241434/48660282-52cf9880-ea9a-11e8-9654-caf579a21500.png">
+        <img src="https://user-images.githubusercontent.com/10241434/48815690-42f5d400-ed7a-11e8-8e2d-1150462becf4.png">
     <p>
     <p align="center">
         <a href="https://github.com/yumiris/HCE.AmaiSosu/releases/latest">
@@ -52,20 +52,27 @@ there is no collision.
 3. However, if the path is not found, please click on browse and look for `haloce.exe` on your computer.
    Then, you can click Install and be done!
 
-## Support
+# Support
 
 Given that the GitHub repository is a public mirror of the upstream code, issues are disabled there.
 To report bugs, please rely on the
-[official Reddit thread](https://www.reddit.com/r/halospv3/comments/9xvnn5/amaisosu_an_opensauce_installer/).
+[official Reddit thread](https://www.reddit.com/r/halospv3/comments/9xvnn5/amaisosu_an_opensauce_installer/), or contact
+me on Discord if you know my username!
 
-## Attributions
+# Development
 
-- [Icon](https://www.flaticon.com/free-icon/bowl-and-chopsticks-of-japan_12775)
-- [OpenSauce](https://twitter.com/KornnerStudios)
+## Library
+
+AmaiSosu uses the Atarashii Library's OpenSauce module for installing OS to the system. It also applies its own
+modifications and enhancements on top, such as backing up existing OpenSauce data, resolving HAC2 conflicts and
+installing the OS IDE to the HCE directory. A copy of the Atarashii source code is included in this repository.
+
+## Repository
+
+The GitHub repository for AmaiSosu serves a public read-only mirror of the private upstream repository. All commits are
+immediately mirrored to GitHub for transparency.
 
 # Contributors
-
-## Testers
 
 The following invaluable testers have reported/assisted with issues:
 
@@ -73,11 +80,7 @@ The following invaluable testers have reported/assisted with issues:
 - [Michelle](https://github.com/gbMichelle)
 - [Lionir](https://github.com/lionirdeadman)
 
-# Development
+# Attributions
 
-AmaiSosu uses the Atarashii Library's OpenSauce module for installing OS to the system. It also applies its own
-modifications and enhancements on top, such as backing up existing OpenSauce data, resolving HAC2 conflicts and
-installing the OS IDE to the HCE directory. A copy of the Atarashii source code is included in this repository.
-
-The GitHub repository for AmaiSosu serves a public read-only mirror of the private upstream repository. All commits are
-immediately mirrored to GitHub for transparency.
+- [Icon](https://www.flaticon.com/free-icon/bowl-and-chopsticks-of-japan_12775)
+- [OpenSauce](https://twitter.com/KornnerStudios)
