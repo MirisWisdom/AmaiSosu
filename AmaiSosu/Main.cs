@@ -5,10 +5,11 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
-using System.Windows;
 using AmaiSosu.IO;
 using AmaiSosu.Properties;
 using Atarashii.API;
+using static AmaiSosu.Resources.FileNames;
+using static AmaiSosu.Resources.Messages;
 
 namespace AmaiSosu
 {
@@ -25,7 +26,7 @@ namespace AmaiSosu
         /// <summary>
         ///     Current state of the OpenSauce installation.
         /// </summary>
-        private string _installState = "Click Browse and select the HCE installation path.";
+        private string _installState = BrowseHce;
 
         /// <summary>
         ///     Installation path.
@@ -41,9 +42,11 @@ namespace AmaiSosu
             get
             {
                 using (var stream = Assembly.GetExecutingAssembly()
-                    .GetManifestResourceStream("AmaiSosu.Resources.Version.txt"))
+                    .GetManifestResourceStream(AmaiSosuVersion))
                 using (var reader = new StreamReader(stream ?? throw new FileNotFoundException()))
+                {
                     return reader.ReadToEnd().Trim();
+                }
             }
         }
 
@@ -104,7 +107,7 @@ namespace AmaiSosu
             }
             catch (Exception)
             {
-                InstallText = "Click Browse and select the HCE installation path.";
+                InstallText = BrowseHce;
             }
         }
 
@@ -115,13 +118,13 @@ namespace AmaiSosu
         {
             try
             {
-                var backupDir = System.IO.Path.Combine(_path, "AmaiSosu.Backup." + Guid.NewGuid());
+                var backupDir = System.IO.Path.Combine(_path, AmaiSosuBackup + '.' + Guid.NewGuid());
 
                 CommitBackups(backupDir);
                 OpenSauce.Install(Path);
                 FinishInstall(backupDir);
 
-                InstallText = "Installation has been successful!";
+                InstallText = InstallSuccess;
             }
             catch (Exception e)
             {
@@ -159,14 +162,11 @@ namespace AmaiSosu
             // restore backed up HCE shaders
             MoveFactory.Get(MoveFactory.Type.RestoreHceShaders, _path, backupDir).Commit();
 
-            // move the OpenSauce IDE data
-            const string dirName = "OpenSauceIDE";
-
             var source =
                 System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData),
-                    "Kornner Studios", "OpenSauce", dirName);
+                    OpenSauceDeveloper, OpenSauceDirectory, OpenSauceIDE);
 
-            var target = System.IO.Path.Combine(Path, dirName);
+            var target = System.IO.Path.Combine(Path, OpenSauceIDE);
 
             Copy.All(new DirectoryInfo(source), new DirectoryInfo(target));
             Directory.Delete(source, true);
@@ -180,10 +180,10 @@ namespace AmaiSosu
         /// </summary>
         private void OnPathChanged()
         {
-            CanInstall = Directory.Exists(Path) && File.Exists(System.IO.Path.Combine(Path, "haloce.exe"));
+            CanInstall = Directory.Exists(Path) && File.Exists(System.IO.Path.Combine(Path, HceExecutable));
             InstallText = CanInstall
-                ? "Ready to install OpenSauce to the HCE folder!"
-                : "Click Browse and select the HCE installation path.";
+                ? InstallReady
+                : BrowseHce;
         }
 
         [NotifyPropertyChangedInvocator]
