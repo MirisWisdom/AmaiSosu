@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using AmaiSosu.IO;
 using AmaiSosu.Properties;
@@ -30,6 +31,17 @@ namespace AmaiSosu
         ///     Path is expected to contain the HCE executable.
         /// </summary>
         private string _path;
+
+        public string Version
+        {
+            get
+            {
+                using (var stream = Assembly.GetExecutingAssembly()
+                    .GetManifestResourceStream("AmaiSosu.Resources.Version.txt"))
+                using (var reader = new StreamReader(stream ?? throw new FileNotFoundException()))
+                    return reader.ReadToEnd().Trim();
+            }
+        }
 
         /// <summary>
         ///     Installation path.
