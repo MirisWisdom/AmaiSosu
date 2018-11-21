@@ -68,22 +68,19 @@
             <!-- Header -->
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Center">
-                <Label Content="HCE."
-                       FontFamily="Segoe UI Light"
-                       FontSize="48"
-                       Padding="0"
-                       HorizontalContentAlignment="Center" />
+                <StackPanel.Resources>
+                    <Style TargetType="Label">
+                        <Setter Property="FontFamily" Value="Segoe UI Light" />
+                        <Setter Property="FontSize" Value="48" />
+                        <Setter Property="Padding" Value="0" />
+                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                    </Style>
+                </StackPanel.Resources>
+
+                <Label Content="HCE." />
                 <Label Content="Amai"
-                       FontFamily="Segoe UI Light"
-                       FontSize="48"
-                       Foreground="Crimson"
-                       Padding="0"
-                       HorizontalContentAlignment="Center" />
-                <Label Content="Sosu"
-                       FontFamily="Segoe UI Light"
-                       FontSize="48"
-                       Padding="0"
-                       HorizontalContentAlignment="Center" />
+                       Foreground="Crimson" />
+                <Label Content="Sosu" />
             </StackPanel>
 
             <Label Content="⸻ An OpenSauce Installer ⸻"
@@ -101,7 +98,8 @@
                          Padding="2.5,0,0,0" />
             </DockPanel>
 
-            <Border Margin="0,10,0,0">
+            <Border Margin="0,10,0,0"
+                    IsEnabled="{Binding CanInstall}">
                 <Button Content="⬛ Install OpenSauce"
                         FontSize="16"
                         IsEnabled="{Binding CanInstall}"

@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Windows;
 using AmaiSosu.IO;
 using AmaiSosu.Properties;
 using Atarashii.API;
@@ -14,17 +15,17 @@ namespace AmaiSosu
     /// <summary>
     ///     Main AmaiSosu model.
     /// </summary>
-    public class Main : INotifyPropertyChanged
+    public sealed class Main : INotifyPropertyChanged
     {
         /// <summary>
         ///     Installation is possible given the current state.
         /// </summary>
-        private bool _canInstall = true;
+        private bool _canInstall;
 
         /// <summary>
         ///     Current state of the OpenSauce installation.
         /// </summary>
-        private string _installState = "Currently awaiting the end-user to invoke OpenSauce installation.";
+        private string _installState = "Click Browse and select the HCE installation path.";
 
         /// <summary>
         ///     Installation path.
@@ -32,6 +33,9 @@ namespace AmaiSosu
         /// </summary>
         private string _path;
 
+        /// <summary>
+        ///     Git version.
+        /// </summary>
         public string Version
         {
             get
@@ -176,12 +180,14 @@ namespace AmaiSosu
         /// </summary>
         private void OnPathChanged()
         {
-            if (Directory.Exists(Path))
-                InstallText = "Ready to install OpenSauce to the HCE folder!";
+            CanInstall = Directory.Exists(Path) && File.Exists(System.IO.Path.Combine(Path, "haloce.exe"));
+            InstallText = CanInstall
+                ? "Ready to install OpenSauce to the HCE folder!"
+                : "Click Browse and select the HCE installation path.";
         }
 
         [NotifyPropertyChangedInvocator]
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
