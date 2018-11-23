@@ -9,7 +9,7 @@
         An Alternative OpenSauce Installer
     </h3>
     <p align="center">
-        <img src="https://user-images.githubusercontent.com/10241434/48815690-42f5d400-ed7a-11e8-8e2d-1150462becf4.png">
+        <img src="https://user-images.githubusercontent.com/10241434/48937560-7175d980-ef49-11e8-974c-ad937370b68f.png">
     <p>
     <p align="center">
         <a href="https://github.com/yumiris/HCE.AmaiSosu/releases/latest">
@@ -52,6 +52,15 @@ there is no collision.
 3. However, if the path is not found, please click on browse and look for `haloce.exe` on your computer.
    Then, you can click Install and be done!
 
+### Portable Installations
+
+For users out there with alternative HCE installations in conformist environments, download the installer and extract it
+using 7-Zip or WinRAR. Then, run the extracted `AmaiSosu.GUI.exe` executable without admin permissions and install it to
+your portable HCE directory.
+
+Note that attempting to install AmaiSosu to HCE in a restricted location (e.g. `Program Files\Microsoft Games\`) without
+admin permissions will cause issues!
+
 # Support
 
 Given that the GitHub repository is a public mirror of the upstream code, issues are disabled there.
@@ -63,7 +72,7 @@ me on Discord if you know my username!
 
 ## Library
 
-As of v0.3.4, AmaiSosu uses a forked version Atarashii Library's OpenSauce module for installing OS to the system.
+As of `v0.3.4`, AmaiSosu uses a forked version Atarashii Library's OpenSauce module for installing OS to the system.
 It also applies its own modifications and enhancements on top, such as backing up existing OpenSauce data, resolving
 HAC2 conflicts and installing the OS IDE to the HCE directory.
 
@@ -79,6 +88,7 @@ The following invaluable testers have reported/assisted with issues:
 - Anton#6293
 - [Michelle](https://github.com/gbMichelle)
 - [Lionir](https://github.com/lionirdeadman)
+- moiler
 
 # Attributions
 
