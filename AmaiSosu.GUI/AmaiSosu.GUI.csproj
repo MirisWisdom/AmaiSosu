@@ -57,11 +57,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="IO\Copy.cs" />
-    <Compile Include="IO\Move.cs" />
-    <Compile Include="IO\MoveDirectory.cs" />
-    <Compile Include="IO\MoveFactory.cs" />
-    <Compile Include="IO\MoveFile.cs" />
+    <Compile Include="Main.cs" />
     <Compile Include="Resources\FileNames.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -74,7 +70,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Main.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
@@ -99,9 +94,9 @@
     <Page Include="MainWindow.xaml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Atarashii\Atarashii.API\Atarashii.API.csproj">
-      <Project>{2c5d2b0e-fea7-43f2-9960-215280cca7b7}</Project>
-      <Name>Atarashii.API</Name>
+    <ProjectReference Include="..\AmaiSosu\AmaiSosu.csproj">
+      <Project>{693bf44b-7ba3-461c-8ce1-d0f11fbe930d}</Project>
+      <Name>AmaiSosu</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

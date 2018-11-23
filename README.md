@@ -63,9 +63,9 @@ me on Discord if you know my username!
 
 ## Library
 
-AmaiSosu uses the Atarashii Library's OpenSauce module for installing OS to the system. It also applies its own
-modifications and enhancements on top, such as backing up existing OpenSauce data, resolving HAC2 conflicts and
-installing the OS IDE to the HCE directory. A copy of the Atarashii source code is included in this repository.
+As of v0.3.4, AmaiSosu uses a forked version Atarashii Library's OpenSauce module for installing OS to the system.
+It also applies its own modifications and enhancements on top, such as backing up existing OpenSauce data, resolving
+HAC2 conflicts and installing the OS IDE to the HCE directory.
 
 ## Repository
 
