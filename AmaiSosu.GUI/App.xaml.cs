@@ -1,4 +1,4 @@
-﻿namespace AmaiSosu
+﻿namespace AmaiSosu.GUI
 {
     /// <summary>
     ///     Interaction logic for App.xaml

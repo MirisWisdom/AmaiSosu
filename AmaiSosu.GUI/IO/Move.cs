@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace AmaiSosu.IO
+namespace AmaiSosu.GUI.IO
 {
     /// <summary>
     ///     Abstract representing a type that conducts data migration.

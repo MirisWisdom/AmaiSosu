@@ -1,9 +1,10 @@
-<Window x:Class="AmaiSosu.MainWindow"
+<Window x:Class="AmaiSosu.GUI.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:amaiSosu="clr-namespace:AmaiSosu"
+        xmlns:gui="clr-namespace:AmaiSosu.GUI"
         mc:Ignorable="d"
         Title="HCE.AmaiSosu | OpenSauce Installer"
         Width="860"
@@ -16,7 +17,7 @@
         <ImageBrush ImageSource="Resources/background.png" Stretch="None" AlignmentX="Left" AlignmentY="Top" />
     </Window.Background>
     <Window.DataContext>
-        <amaiSosu:Main />
+        <gui:Main />
     </Window.DataContext>
     <Window.Resources>
         <Style TargetType="{x:Type Button}">

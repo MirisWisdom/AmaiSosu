@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AmaiSosu.Resources {
+namespace AmaiSosu.GUI.Resources {
     using System;
     
     
@@ -19,7 +19,7 @@ namespace AmaiSosu.Resources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class FileNames {
@@ -39,7 +39,7 @@ namespace AmaiSosu.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AmaiSosu.Resources.FileNames", typeof(FileNames).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AmaiSosu.GUI.Resources.FileNames", typeof(FileNames).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -70,7 +70,7 @@ namespace AmaiSosu.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to AmaiSosu.Resources.Version.txt.
+        ///   Looks up a localized string similar to AmaiSosu.GUI.Resources.Version.txt.
         /// </summary>
         internal static string AmaiSosuVersion {
             get {

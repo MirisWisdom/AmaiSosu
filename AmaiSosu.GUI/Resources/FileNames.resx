@@ -121,7 +121,7 @@
     <value>AmaiSosu.Backup</value>
   </data>
   <data name="AmaiSosuVersion" xml:space="preserve">
-    <value>AmaiSosu.Resources.Version.txt</value>
+    <value>AmaiSosu.GUI.Resources.Version.txt</value>
   </data>
   <data name="HceExecutable" xml:space="preserve">
     <value>haloce.exe</value>

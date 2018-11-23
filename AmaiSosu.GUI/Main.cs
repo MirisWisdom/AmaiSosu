@@ -5,13 +5,12 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
-using AmaiSosu.IO;
-using AmaiSosu.Properties;
+using AmaiSosu.GUI.IO;
+using AmaiSosu.GUI.Properties;
+using AmaiSosu.GUI.Resources;
 using Atarashii.API;
-using static AmaiSosu.Resources.FileNames;
-using static AmaiSosu.Resources.Messages;
 
-namespace AmaiSosu
+namespace AmaiSosu.GUI
 {
     /// <summary>
     ///     Main AmaiSosu model.
@@ -26,7 +25,7 @@ namespace AmaiSosu
         /// <summary>
         ///     Current state of the OpenSauce installation.
         /// </summary>
-        private string _installState = BrowseHce;
+        private string _installState = Messages.BrowseHce;
 
         /// <summary>
         ///     Installation path.
@@ -42,7 +41,7 @@ namespace AmaiSosu
             get
             {
                 using (var stream = Assembly.GetExecutingAssembly()
-                    .GetManifestResourceStream(AmaiSosuVersion))
+                    .GetManifestResourceStream(FileNames.AmaiSosuVersion))
                 using (var reader = new StreamReader(stream ?? throw new FileNotFoundException()))
                 {
                     return reader.ReadToEnd().Trim();
@@ -107,7 +106,7 @@ namespace AmaiSosu
             }
             catch (Exception)
             {
-                InstallText = BrowseHce;
+                InstallText = Messages.BrowseHce;
             }
         }
 
@@ -118,13 +117,13 @@ namespace AmaiSosu
         {
             try
             {
-                var backupDir = System.IO.Path.Combine(_path, AmaiSosuBackup + '.' + Guid.NewGuid());
+                var backupDir = System.IO.Path.Combine(_path, FileNames.AmaiSosuBackup + '.' + Guid.NewGuid());
 
                 CommitBackups(backupDir);
                 OpenSauce.Install(Path);
                 FinishInstall(backupDir);
 
-                InstallText = InstallSuccess;
+                InstallText = Messages.InstallSuccess;
             }
             catch (Exception e)
             {
@@ -164,9 +163,9 @@ namespace AmaiSosu
 
             var source =
                 System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData),
-                    OpenSauceDeveloper, OpenSauceDirectory, OpenSauceIDE);
+                    FileNames.OpenSauceDeveloper, FileNames.OpenSauceDirectory, FileNames.OpenSauceIDE);
 
-            var target = System.IO.Path.Combine(Path, OpenSauceIDE);
+            var target = System.IO.Path.Combine(Path, FileNames.OpenSauceIDE);
 
             Copy.All(new DirectoryInfo(source), new DirectoryInfo(target));
             Directory.Delete(source, true);
@@ -180,10 +179,10 @@ namespace AmaiSosu
         /// </summary>
         private void OnPathChanged()
         {
-            CanInstall = Directory.Exists(Path) && File.Exists(System.IO.Path.Combine(Path, HceExecutable));
+            CanInstall = Directory.Exists(Path) && File.Exists(System.IO.Path.Combine(Path, FileNames.HceExecutable));
             InstallText = CanInstall
-                ? InstallReady
-                : BrowseHce;
+                ? Messages.InstallReady
+                : Messages.BrowseHce;
         }
 
         [NotifyPropertyChangedInvocator]

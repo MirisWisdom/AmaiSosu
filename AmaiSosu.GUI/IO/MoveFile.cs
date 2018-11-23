@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace AmaiSosu.IO
+namespace AmaiSosu.GUI.IO
 {
     /// <inheritdoc />
     public class MoveFile : Move

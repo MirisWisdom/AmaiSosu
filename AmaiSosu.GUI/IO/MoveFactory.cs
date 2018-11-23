@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace AmaiSosu.IO
+namespace AmaiSosu.GUI.IO
 {
     /// <summary>
     ///     Returns Move instances built using the inbound arguments. This factory is designed for backing up or

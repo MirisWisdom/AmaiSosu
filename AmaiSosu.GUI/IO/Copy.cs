@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 
-namespace AmaiSosu.IO
+namespace AmaiSosu.GUI.IO
 {
     /// <summary>
     ///     Copy a directory and its contents. Adapted from the MSDN CopyAll method.

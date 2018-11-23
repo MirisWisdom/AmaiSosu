@@ -3,7 +3,7 @@ using System.IO;
 using System.Windows;
 using Microsoft.Win32;
 
-namespace AmaiSosu
+namespace AmaiSosu.GUI
 {
     public partial class MainWindow : Window
     {
