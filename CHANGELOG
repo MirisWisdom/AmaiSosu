@@ -1,0 +1,60 @@
+# v0.3.4
+
+## Fix "This program might not have installed correctly" Warning
+
+Releases now contain an embedded manifest, which fixes the misleading `This program might not have installed correctly` warning.
+
+The manifest also reinforces the requirement for administrative privileges. This is to ensure that OS is properly installed if HCE/SPV3 is in a restricted location (e.g. the Program Files directory).
+
+If you're running HCE off an USB on school computers (😉), then extract `AmaiSosu-v0.3.4.exe` with 7z/WinRAR, and launch `AmaiSosu.GUI` as a normal user.
+
+## Discard Dependency on the Atarashii library
+
+TL;DR - If you're an end-user, ignore this!
+
+- Installation logic has been forked off from the Atarashii library, into a dedicated AmaiSosu library assembly.
+- AmaiSosu's modifications (e.g. backup routines, OS IDE moves, HAC2 detection) have also been moved to the AmaiSosu library assembly.
+- This removes the dependency on the Atarashii library, and also decouples the AmaiSosu installation logic from its UI
+
+# v0.3.3
+
+## No More False Positives
+
+The method of compiling the installer data into an SFX has been changed, thereby reducing the chances of false positive AV alerts.
+
+[Refer to this VirusTotal link for an example of false positives.](https://www.virustotal.com/#/file/02975eb34b425a8331ec492f49e3483f534d2e34624c2669cb4e7f0191c1266c/detection)
+
+[This is how VirusTotal reports AmaiSosu SFXs now.](https://www.virustotal.com/#/file/76942cd1b831172453bc8198ebfbfb8c579311beb8c4a882fecf856cb3f901d4/detection)
+
+Cheers to moiler  & `Anton#6293` for informing me about the false positives.
+
+## Background Resolution
+
+The background image's resolution has been increased in size. This should resolve the graphical glitch that people were experiencing in WINE. Cheers to [Lionir](https://github.com/lionirdeadman) for the heads up.
+
+# v0.3.2
+
+Code improvements & UI tweaks, including:
+
+- displaying of executable version based on Git repository information;
+- ensuring that the install button is inactive unless a valid HCE directory is chosen.
+
+# v0.3.1
+
+The following problem has been resolved:
+
+> The AmaiSosu installer backs up any existing OpenSauce data before installation. This includes the shaders directory in the HCE directory. The problem is that this directory is created and used by HCE, and OS merely relies on it. If the non-OS data in the shaders directory gets backed up, HCE is prone to breaking.
+
+A thank you to the following invaluable testers for assisting with/confirming this issue: `Anton#6293`, [Michelle](https://github.com/gbMichelle) and [Lionir](https://github.com/lionirdeadman).
+
+# v0.3.0
+
+Introduced support for installing the OpenSauce IDE to a dedicated sub-directory in the HCE directory, rather than to the original directory which is pretty obscure and inconvenient to access.
+
+# v0.2.0
+
+Introduced support for detecting & backing up HAC2. Because HAC2 is incompatible with OpenSauce, AmaiSosu will back up its DLL to disable HCE from loading it.
+
+# v0.1.0
+
+This is the initial release of AmaiSosu. Please report issues [here](https://www.reddit.com/r/halospv3/comments/9xvnn5/amaisosu_an_opensauce_installer/)!
