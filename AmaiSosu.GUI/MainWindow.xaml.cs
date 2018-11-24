@@ -41,5 +41,10 @@ namespace AmaiSosu.GUI
         {
             Process.Start("https://github.com/yumiris/HCE.AmaiSosu/releases");
         }
+
+        private void Version(object sender, RoutedEventArgs e)
+        {
+            Process.Start($"https://github.com/yumiris/HCE.AmaiSosu/releases/{_main.Version}");
+        }
     }
 }

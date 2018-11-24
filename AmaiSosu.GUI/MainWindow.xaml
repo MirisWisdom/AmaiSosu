@@ -60,6 +60,9 @@
         <Menu VerticalAlignment="Top">
             <MenuItem Header="About" Click="About" />
             <MenuItem Header="Releases" Click="Releases" />
+            <MenuItem Header="{Binding Version}"
+                      Click="Version"
+                      Foreground="#ABADB3" />
         </Menu>
 
         <!-- Body -->
@@ -110,11 +113,6 @@
             <Label Margin="0,5,0,0"
                    HorizontalContentAlignment="Center"
                    Content="{Binding InstallText}" />
-
-            <Label Margin="0,5,0,0"
-                   HorizontalContentAlignment="Center"
-                   Foreground="Gray"
-                   Content="{Binding Version}" />
         </StackPanel>
     </Grid>
 </Window>
