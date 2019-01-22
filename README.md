@@ -68,19 +68,6 @@ To report bugs, please rely on the
 [official Reddit thread](https://www.reddit.com/r/halospv3/comments/9xvnn5/amaisosu_an_opensauce_installer/), or contact
 me on Discord if you know my username!
 
-# Development
-
-## Library
-
-As of `v0.3.4`, AmaiSosu uses a forked version Atarashii Library's OpenSauce module for installing OS to the system.
-It also applies its own modifications and enhancements on top, such as backing up existing OpenSauce data, resolving
-HAC2 conflicts and installing the OS IDE to the HCE directory.
-
-## Repository
-
-The GitHub repository for AmaiSosu serves a public read-only mirror of the private upstream repository. All commits are
-immediately mirrored to GitHub for transparency.
-
 # Contributors
 
 The following invaluable testers have reported/assisted with issues:
