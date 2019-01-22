@@ -24,49 +24,60 @@
 
 # Introduction
 
-AmaiSosu is an installer for the HCE OpenSauce mod, which seeks to make the installation much more straightforward
-and easy. It serves as the successor of SweetSauce, in both its name and in its functionality.
+AmaiSosu is an installer for the HCE OpenSauce mod, which seeks to make the
+installation much more straightforward and easy. It serves as the successor of
+SweetSauce, in both its name and in its functionality.
 
-AmaiSosu installs the OpenSauce library data to the given HCE directory path, and it also installs in-game UI for
-configuring OpenSauce. If OpenSauce/HAC2 files are present in the given HCE directory path, it will back them up to
-a directory named `AmaiSosu.Backup.<GUID>`. HAC2 is incompatible with OS, thus it will be deactivated to ensure that
-there is no collision.
+AmaiSosu installs the OpenSauce library data to the given HCE directory path,
+and it also installs in-game UI for configuring OpenSauce. If OpenSauce/HAC2
+files are present in the given HCE directory path, it will back them up to a
+directory named `AmaiSosu.Backup.<GUID>`. HAC2 is incompatible with OS, thus it
+will be deactivated to ensure that there is no collision.
 
 ## Features
 
 - installation of the OpenSauce libraries, in-game UI and user configurations;
-- installation of OpenSauce development tools (`OS_Guerilla`, `OS_Sapien`, `OS_Tool`, etc.);
-- installation of the OpenSauce IDE to the HCE directory, for self-containerisation & convenience;
-- automatic back-up of existing OpenSauce data in the HCE directory (both files and folders);
-- automatic back-up & deactivation of HAC2 if it exists, due to its incompatibility with OpenSauce;
-- automatic detection attempt of a legally installed HCE directory for an even easier installation;
-- ability to manually specify a HCE directory, for portable/non-standard HCE installations;
-- minimum administrative requirements -- they are only needed if HCE is installed a restricted location;
-- minimum .NET Framework required is 4.5, which comes built-in as of Windows 8 -- no need for multiple .NET versions;
-- dependencies used by OpenSauce (e.g. MSVCR) are all installed to the HCE directory rather than on the system.
+- installation of OpenSauce development tools (`OS_Guerilla`, `OS_Sapien`,
+  `OS_Tool`, etc.);
+- installation of the OpenSauce IDE to the HCE directory, for
+  self-containerisation & convenience;
+- automatic back-up of existing OpenSauce data in the HCE directory (both files
+  and folders);
+- automatic back-up & deactivation of HAC2 if it exists, due to its
+  incompatibility with OpenSauce;
+- automatic detection attempt of a legally installed HCE directory for an even
+  easier installation;
+- ability to manually specify a HCE directory, for portable/non-standard HCE
+  installations;
+- minimum administrative requirements -- they are only needed if HCE is
+  installed a restricted location;
+- minimum .NET Framework required is 4.5, which comes built-in as of Windows 8
+  -- no need for multiple .NET versions;
+- dependencies used by OpenSauce (e.g. MSVCR) are all installed to the HCE
+  directory rather than on the system.
 
 ## Usage
 
 1. Download the installer and run it with administrative permissions.
-2. If HCE is legally installed, its path should be detected. Just click Install, and you're done!
-3. However, if the path is not found, please click on browse and look for `haloce.exe` on your computer.
-   Then, you can click Install and be done!
+2. If HCE is legally installed, its path should be detected. Just click Install,
+   and you're done!
+3. However, if the path is not found, please click on browse and look for
+   `haloce.exe` on your computer. Then, you can click Install and be done!
 
 ### Portable Installations
 
-For users out there with alternative HCE installations in conformist environments, download the installer and extract it
-using 7-Zip or WinRAR. Then, run the extracted `AmaiSosu.GUI.exe` executable without admin permissions and install it to
-your portable HCE directory.
+For users out there with alternative HCE installations in conformist
+environments, download the installer and extract it using 7-Zip or WinRAR. Then,
+run the extracted `AmaiSosu.GUI.exe` executable without admin permissions and
+install it to your portable HCE directory.
 
-Note that attempting to install AmaiSosu to HCE in a restricted location (e.g. `Program Files\Microsoft Games\`) without
-admin permissions will cause issues!
+Note that attempting to install AmaiSosu to HCE in a restricted location (e.g.
+`Program Files\Microsoft Games\`) without admin permissions will cause issues!
 
 # Support
 
-Given that the GitHub repository is a public mirror of the upstream code, issues are disabled there.
-To report bugs, please rely on the
-[official Reddit thread](https://www.reddit.com/r/halospv3/comments/9xvnn5/amaisosu_an_opensauce_installer/), or contact
-me on Discord if you know my username!
+Please [post an issue](https://github.com/yumiris/HCE.AmaiSosu/issues/new) if
+you encounter any problems.
 
 # Contributors
 
