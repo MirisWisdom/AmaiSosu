@@ -19,6 +19,7 @@
 
 using System.Diagnostics;
 using System.IO;
+using System.Threading.Tasks;
 using System.Windows;
 using Microsoft.Win32;
 
@@ -37,7 +38,13 @@ namespace AmaiSosu.GUI
 
         private void Install(object sender, RoutedEventArgs e)
         {
-            _main.Install();
+            InstallButton.IsEnabled = false;
+            InstallButton.Content   = "...";
+            
+            Task.Run(() => { _main.Install(); }).GetAwaiter().GetResult();
+
+            InstallButton.IsEnabled = true;
+            InstallButton.Content   = "⬛ Install OpenSauce";
         }
 
         private void Browse(object sender, RoutedEventArgs e)

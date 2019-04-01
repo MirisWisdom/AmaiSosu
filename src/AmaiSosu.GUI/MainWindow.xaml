@@ -107,7 +107,8 @@
                 <Button Content="⬛ Install OpenSauce"
                         FontSize="16"
                         IsEnabled="{Binding CanInstall}"
-                        Click="Install" />
+                        Click="Install"
+                        Name="InstallButton" />
             </Border>
 
             <Label Margin="0,5,0,0"
