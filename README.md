@@ -47,6 +47,7 @@ will be deactivated to ensure that there is no collision.
   incompatibility with OpenSauce;
 - automatic detection attempt of a legally installed HCE directory for an even
   easier installation;
+- automatic detection of an officially installed SPV3.2 directory;
 - ability to manually specify a HCE directory, for portable/non-standard HCE
   installations;
 - minimum administrative requirements -- they are only needed if HCE is
