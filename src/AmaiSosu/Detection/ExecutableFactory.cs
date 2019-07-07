@@ -21,6 +21,8 @@ using System;
 using System.IO;
 using AmaiSosu.Common;
 using Microsoft.Win32;
+using static System.Environment;
+using static System.Environment.SpecialFolder;
 
 namespace AmaiSosu.Detection
 {
@@ -72,6 +74,16 @@ namespace AmaiSosu.Detection
             switch (type)
             {
                 case Type.Detect:
+                    var spv3install = Path.Combine(GetFolderPath(ApplicationData), "SPV3", "install.txt");
+
+                    if (File.Exists(spv3install))
+                    {
+                        var spv3path = Path.Combine(File.ReadAllText(spv3install), Executable.Name);
+
+                        if (File.Exists(spv3path))
+                            return new Executable(spv3path, output);
+                    }
+
                     using (var view = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64))
                     using (var key = view.OpenSubKey(RegKeyLocation))
                     {
