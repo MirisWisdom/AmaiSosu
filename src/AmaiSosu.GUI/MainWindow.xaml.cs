@@ -36,12 +36,12 @@ namespace AmaiSosu.GUI
             _main.Initialise();
         }
 
-        private void Install(object sender, RoutedEventArgs e)
+        private async void Install(object sender, RoutedEventArgs e)
         {
             InstallButton.IsEnabled = false;
             InstallButton.Content   = "...";
-            
-            Task.Run(() => { _main.Install(); }).GetAwaiter().GetResult();
+
+            await Task.Run(() => _main.Install());
 
             InstallButton.IsEnabled = true;
             InstallButton.Content   = "⬛ Install OpenSauce";
