@@ -121,7 +121,7 @@
     <value>Click Browse and select the HCE installation path.</value>
   </data>
   <data name="InstallReady" xml:space="preserve">
-    <value>Ready to install OpenSauce to the HCE folder!</value>
+    <value>Ready to install OpenSauce to the HCE/SPV3 folder!</value>
   </data>
   <data name="InstallSuccess" xml:space="preserve">
     <value>Installation has been successful!</value>
