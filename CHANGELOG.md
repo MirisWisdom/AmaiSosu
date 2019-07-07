@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## v0.3.5
 ### Added
 - Asynchronous invocation of the installation procedure.
+- Ability to detect an officially SPV3.2 directory.
+- Remove OpenSauce data directory pre-installation.
 
 ### Changed
 - Changed licence to GPL-3.0.
