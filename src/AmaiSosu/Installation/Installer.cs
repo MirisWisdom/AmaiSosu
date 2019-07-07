@@ -20,6 +20,9 @@
 using System.Collections.Generic;
 using System.IO;
 using AmaiSosu.Common;
+using static System.Environment;
+using static System.Environment.SpecialFolder;
+using static System.IO.Path;
 
 namespace AmaiSosu.Installation
 {
@@ -49,13 +52,13 @@ namespace AmaiSosu.Installation
 
         public Installer(string hcePath, List<Package> packages)
         {
-            _hcePath = hcePath;
+            _hcePath  = hcePath;
             _packages = packages;
         }
 
         public Installer(string hcePath, List<Package> packages, Output output) : base(output)
         {
-            _hcePath = hcePath;
+            _hcePath  = hcePath;
             _packages = packages;
         }
 
@@ -75,7 +78,7 @@ namespace AmaiSosu.Installation
             if (!Directory.Exists(_hcePath))
                 return new Verification(false, "Target directory for OpenSauce installation does not exist.");
 
-            if (!File.Exists(Path.Combine(_hcePath, "haloce.exe")))
+            if (!File.Exists(Combine(_hcePath, "haloce.exe")))
                 return new Verification(false, "Invalid target HCE directory path for OpenSauce installation.");
 
             foreach (var package in _packages)
@@ -105,6 +108,11 @@ namespace AmaiSosu.Installation
 
             if (!state.IsValid)
                 WriteAndThrow(new OpenSauceException(state.Reason));
+
+            var data = Combine(GetFolderPath(CommonApplicationData), "Kornner Studios");
+
+            if (Directory.Exists(data))
+                Directory.Delete(data, true);
 
             WriteSuccess("OpenSauce installer has been successfully verified.");
             WriteInfo("Attempting to install OpenSauce to the filesystem.");
