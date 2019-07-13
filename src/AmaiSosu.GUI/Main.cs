@@ -52,7 +52,7 @@ namespace AmaiSosu.GUI
         /// <summary>
         ///     Git version.
         /// </summary>
-        public string Version => "build-0000";
+        public string Version => $"build-{Assembly.GetEntryAssembly()?.GetName().Version.Major:D4}";
 
         /// <summary>
         ///     Installation path.
