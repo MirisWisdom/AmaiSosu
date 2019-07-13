@@ -93,17 +93,14 @@ namespace AmaiSosu.Installation
         private List<Package> GetOpenSaucePackages()
         {
             var guiDirPath = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
-            var usrDirPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "My Games");
 
             var libPackage = Path.Combine(Package.Directory, $"{Installer.LibPackage}.{Package.Extension}");
             var guiPackage = Path.Combine(Package.Directory, $"{Installer.GuiPackage}.{Package.Extension}");
-            var usrPackage = Path.Combine(Package.Directory, $"{Installer.UsrPackage}.{Package.Extension}");
 
             return new List<Package>
             {
                 new Package(libPackage, "OpenSauce core and dependencies", _installationPath, _output),
                 new Package(guiPackage, "In-game OpenSauce UI assets", guiDirPath, _output),
-                new Package(usrPackage, "OpenSauce XML user configuration", usrDirPath, _output)
             };
         }
     }
