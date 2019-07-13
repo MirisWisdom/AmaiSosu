@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## v0.4.0
+### Added
+- A completely new user interface and branding style.
+
+### Removed
+- Installation of user XML settings (OpenSauce generates them on start-up).
+
 ## v0.3.5
 ### Added
 - Asynchronous invocation of the installation procedure.

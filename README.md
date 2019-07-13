@@ -9,7 +9,7 @@
         An Alternative OpenSauce Installer
     </h3>
     <p align="center">
-        <img src="https://user-images.githubusercontent.com/10241434/48937560-7175d980-ef49-11e8-974c-ad937370b68f.png">
+        <img src="https://user-images.githubusercontent.com/10241434/61166547-fc035b80-a561-11e9-8928-d39d5d4a6a77.png">
     <p>
     <p align="center">
         <a href="https://github.com/yumiris/HCE.AmaiSosu/releases/latest">
@@ -36,7 +36,7 @@ will be deactivated to ensure that there is no collision.
 
 ## Features
 
-- installation of the OpenSauce libraries, in-game UI and user configurations;
+- installation of the OpenSauce libraries and in-game settings user interface;
 - installation of OpenSauce development tools (`OS_Guerilla`, `OS_Sapien`,
   `OS_Tool`, etc.);
 - installation of the OpenSauce IDE to the HCE directory, for
