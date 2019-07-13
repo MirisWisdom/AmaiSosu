@@ -93,7 +93,7 @@ namespace AmaiSosu.Installation
         private List<Package> GetOpenSaucePackages()
         {
             var guiDirPath = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
-            var usrDirPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            var usrDirPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "My Games");
 
             var libPackage = Path.Combine(Package.Directory, $"{Installer.LibPackage}.{Package.Extension}");
             var guiPackage = Path.Combine(Package.Directory, $"{Installer.GuiPackage}.{Package.Extension}");
