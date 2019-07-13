@@ -21,11 +21,12 @@ using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
+using MahApps.Metro.Controls;
 using Microsoft.Win32;
 
 namespace AmaiSosu.GUI
 {
-    public partial class MainWindow : Window
+    public partial class MainWindow : MetroWindow
     {
         private readonly Main _main;
 
@@ -39,12 +40,10 @@ namespace AmaiSosu.GUI
         private async void Install(object sender, RoutedEventArgs e)
         {
             InstallButton.IsEnabled = false;
-            InstallButton.Content   = "...";
 
             await Task.Run(() => _main.Install());
 
             InstallButton.IsEnabled = true;
-            InstallButton.Content   = "⬛ Install OpenSauce";
         }
 
         private void Browse(object sender, RoutedEventArgs e)

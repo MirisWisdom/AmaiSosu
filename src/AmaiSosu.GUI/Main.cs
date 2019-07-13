@@ -122,6 +122,7 @@ namespace AmaiSosu.GUI
         {
             try
             {
+                InstallText = "...";
                 new AmaiSosu.Main(_path).Install();
                 InstallText = Messages.InstallSuccess;
             }

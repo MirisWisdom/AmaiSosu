@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="BrowseHce" xml:space="preserve">
-    <value>Click Browse and select the HCE installation path.</value>
+    <value>Click Browse to choose the HCE path.</value>
   </data>
   <data name="InstallReady" xml:space="preserve">
-    <value>Ready to install OpenSauce to the HCE/SPV3 folder!</value>
+    <value>Click here to install OpenSauce!</value>
   </data>
   <data name="InstallSuccess" xml:space="preserve">
     <value>Installation has been successful!</value>
