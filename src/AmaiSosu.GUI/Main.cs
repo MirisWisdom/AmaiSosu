@@ -52,7 +52,18 @@ namespace AmaiSosu.GUI
         /// <summary>
         ///     Git version.
         /// </summary>
-        public string Version => "build-0000";
+        public string Version
+        {
+            get
+            {
+                using (var stream = Assembly.GetExecutingAssembly()
+                    .GetManifestResourceStream(FileNames.AmaiSosuVersion))
+                using (var reader = new StreamReader(stream ?? throw new FileNotFoundException()))
+                {
+                    return reader.ReadToEnd().Trim();
+                }
+            }
+        }
 
         /// <summary>
         ///     Installation path.
