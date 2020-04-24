@@ -17,12 +17,18 @@
  * along with AmaiSosu.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Threading.Tasks;
 using System.Windows;
 
-namespace AmaiSosu
+namespace AmaiSosu.GUI
 {
   /// <summary>
-  ///   Interaction logic for App.xaml
+  /// Interaction logic for App.xaml
   /// </summary>
   public partial class App : Application
   {

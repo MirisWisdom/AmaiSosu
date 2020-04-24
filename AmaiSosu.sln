@@ -1,0 +1,31 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmaiSosu", "lib\AmaiSosu.csproj", "{E3A9D3FD-400E-4AF9-8A76-075430DE99CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmaiSosu.CLI", "cli\AmaiSosu.CLI.csproj", "{5BDB1A2F-0BFE-4CE8-B9A7-477F569D92BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmaiSosu.GUI", "gui\AmaiSosu.GUI.csproj", "{C1B1226C-4F32-4D3B-B933-5DC84BF09E39}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BAE1AA49-DF90-4700-89AD-4300D11E9909}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAE1AA49-DF90-4700-89AD-4300D11E9909}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAE1AA49-DF90-4700-89AD-4300D11E9909}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAE1AA49-DF90-4700-89AD-4300D11E9909}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3A9D3FD-400E-4AF9-8A76-075430DE99CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3A9D3FD-400E-4AF9-8A76-075430DE99CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3A9D3FD-400E-4AF9-8A76-075430DE99CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3A9D3FD-400E-4AF9-8A76-075430DE99CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BDB1A2F-0BFE-4CE8-B9A7-477F569D92BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BDB1A2F-0BFE-4CE8-B9A7-477F569D92BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BDB1A2F-0BFE-4CE8-B9A7-477F569D92BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BDB1A2F-0BFE-4CE8-B9A7-477F569D92BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1B1226C-4F32-4D3B-B933-5DC84BF09E39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1B1226C-4F32-4D3B-B933-5DC84BF09E39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1B1226C-4F32-4D3B-B933-5DC84BF09E39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1B1226C-4F32-4D3B-B933-5DC84BF09E39}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

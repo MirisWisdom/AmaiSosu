@@ -17,18 +17,15 @@
  * along with AmaiSosu.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using System.Windows;
+using System;
 
-namespace AmaiSosu
+namespace AmaiSosu.CLI
 {
-  /// <summary>
-  ///   Interaction logic for MainWindow.xaml
-  /// </summary>
-  public partial class MainWindow : Window
+  class Program
   {
-    public MainWindow()
+    static void Main(string[] args)
     {
-      InitializeComponent();
+      Console.WriteLine("Hello World!");
     }
   }
 }
