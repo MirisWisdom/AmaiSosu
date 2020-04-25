@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmaiSosu.CLI", "cli\AmaiSos
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmaiSosu.GUI", "gui\AmaiSosu.GUI.csproj", "{C1B1226C-4F32-4D3B-B933-5DC84BF09E39}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HXE.Detect", "ext\hxe.detect\lib\HXE.Detect.csproj", "{71E9D41A-E8C0-475A-BC9C-2C728B2EBC51}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,5 +29,9 @@ Global
 		{C1B1226C-4F32-4D3B-B933-5DC84BF09E39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1B1226C-4F32-4D3B-B933-5DC84BF09E39}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1B1226C-4F32-4D3B-B933-5DC84BF09E39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71E9D41A-E8C0-475A-BC9C-2C728B2EBC51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71E9D41A-E8C0-475A-BC9C-2C728B2EBC51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71E9D41A-E8C0-475A-BC9C-2C728B2EBC51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71E9D41A-E8C0-475A-BC9C-2C728B2EBC51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

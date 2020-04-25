@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using static System.Environment;
 using static System.Environment.SpecialFolder;
 using static AmaiSosu.Installation.Package.Entry.EntryType;
+using static HXE.Detect.Detection;
 
 namespace AmaiSosu
 {
@@ -30,9 +31,9 @@ namespace AmaiSosu
    */
   public class Installation
   {
-    public string        Name        { get; set; } = "OpenSauce v4";      /* readable installation name for end-user */
-    public List<Package> Packages    { get; set; } = new List<Package>(); /* list of packages to install on the fs   */
-    public string        Destination { get; set; }                        /* installation target for core os files   */
+    public string        Name        { get; set; } = "OpenSauce v4";         /* readable name for end-user       */
+    public List<Package> Packages    { get; set; } = new List<Package>();    /* packages to install on the fs    */
+    public string        Destination { get; set; } = Infer()?.DirectoryName; /* install target for core os files */
 
     /**
      * AmaiSosu Package object, which is an abstraction of DEFLATE archives on the filesystem.
