@@ -20,6 +20,7 @@
 using System.Collections.Generic;
 using static System.Environment;
 using static System.Environment.SpecialFolder;
+using static AmaiSosu.Installation.InstallationType;
 using static AmaiSosu.Installation.Package.Entry.EntryType;
 using static HXE.Detect.Detection;
 
@@ -31,9 +32,21 @@ namespace AmaiSosu
    */
   public class Installation
   {
-    public string        Name        { get; set; } = "OpenSauce v4";         /* readable name for end-user       */
-    public List<Package> Packages    { get; set; } = new List<Package>();    /* packages to install on the fs    */
-    public string        Destination { get; set; } = Infer()?.DirectoryName; /* install target for core os files */
+    public string           Name        { get; set; } = "OpenSauce v4";         /* readable name for end-user         */
+    public List<Package>    Packages    { get; set; } = new List<Package>();    /* packages to install on the fs      */
+    public string           Destination { get; set; } = Infer()?.DirectoryName; /* install target for core os files   */
+    public InstallationType Type        { get; set; } = Normal;                 /* controls which packages to install */
+
+    /**
+     * AmaisSosu Installation Type enum, which in practice is used to as a general way of controlling which packages to
+     * install. For example, a Minimal Installation will result in only the foundational OS files being installed.
+     */
+    public enum InstallationType
+    {
+      Normal,  /* install the os library and in-game configuration gui - the most common install people would need */
+      Minimal, /* install the os library (used for portability; only the hce folder needs to be accessed)          */
+      Complete /* installs the os library, in-game gui, hek modules (access is needed to system and program data)  */
+    }
 
     /**
      * AmaiSosu Package object, which is an abstraction of DEFLATE archives on the filesystem.
