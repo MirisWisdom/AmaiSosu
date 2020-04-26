@@ -17,6 +17,7 @@
  * along with AmaiSosu.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+using System;
 using System.Collections.Generic;
 using static System.Environment;
 using static System.Environment.SpecialFolder;
@@ -97,6 +98,27 @@ namespace AmaiSosu
           Configuration, /* user xml configurations - can be skipped in favour of runtime generation of xml files */
           HEK            /* opensauce hek modules - optionally installed if hek is present on the filesystem      */
         }
+      }
+    }
+
+    /**
+     * Installation Factory object used to generate instances representing common OpenSauce installations, with the
+     * provided parameters.
+     */
+    public static class Factory
+    {
+      /**
+       * Generate AmaiSosu Installation instances for common OpenSauce installations using the provided parameters.
+       */
+      public static Installation Build(InstallationType type, string destination)
+      {
+        throw type switch
+        {
+          Normal   => new NotImplementedException("Building of Normal Installations not implemented."),
+          Minimal  => new NotImplementedException("Building of Minimal Installations not implemented."),
+          Complete => new NotImplementedException("Building of Complete Installations not implemented."),
+          _        => new ArgumentOutOfRangeException(nameof(type), type, null)
+        };
       }
     }
   }
